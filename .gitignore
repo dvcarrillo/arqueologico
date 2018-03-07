@@ -1,3 +1,5 @@
 # Ignore PDF files
 *.pdf
+
+# Ignore macOS folders
 .DS_Store
