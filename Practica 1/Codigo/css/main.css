@@ -148,6 +148,14 @@ Práctica 1
     width: 45%;
 }
 
+.footer {
+	margin: 0px -10px -10px -10px; 
+	background-color: grey;
+	text-align: center;
+	width: calc(100% + 18px);
+	display: inline-block;
+}
+
 #img-strip {
     margin-top: -5px;
     border-top: solid 5px #ffff33;
