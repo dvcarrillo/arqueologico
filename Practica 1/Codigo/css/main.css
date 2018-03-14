@@ -84,9 +84,9 @@ Práctica 1
 }
 
 .sidebar li a:hover {
-    /* background-color:#ffff33; */
     color: black;
-    border-radius: 8px;
+    /* background-color:#ffff33; */
+    /* border-radius: 8px; */
     /* box-shadow: 0px 10px 10px #e6e6e6; */
 }
 
@@ -117,8 +117,8 @@ Práctica 1
     border-top-right-radius: 20px;
 }
 
-.box h1 {
-    font-family: 'Playfair Display', serif;
+.box h1, .box h2 {
+    font-family: 'Lora', serif;
     font-weight: normal;
     padding-left: 20px;
 }
@@ -154,18 +154,11 @@ Práctica 1
 
 /* Footer */
 footer {
-	margin: 80px -10px -10px -10px; 
+	margin: 80px -10px -20px -10px; 
 	background-color: #4f4c4d;
 	width: calc(100% + 18px);
     display: inline-block;
     padding-bottom: 20px;
-}
-
-.list-footer {
-    /* display: table; */
-    /* width: auto;
-    margin-left: auto;
-    margin-right: auto; */
 }
 
 .list-footer li {
@@ -173,8 +166,6 @@ footer {
     list-style: none;
     margin: 30px;
     margin-right: 80px;
-    /* margin-right: 1rem;
-    margin-left: 1rem; */
 }
 
 .list-footer p {
