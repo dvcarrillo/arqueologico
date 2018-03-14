@@ -7,4 +7,5 @@ Works for the course of Web Development at the University of Granada. Made toget
 
 ## Specifications
 
-- **Practice 1:** HTML and CSS. [Live website](https://dvcarrillo.github.io/ugr-web-development/Práctica%201/Código/)
+- **Practice 1:** HTML and CSS.
+- **More to come!**
