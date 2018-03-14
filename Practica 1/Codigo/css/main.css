@@ -112,7 +112,6 @@ Práctica 1
 }
 
 .box img {
-    display: inline;
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -148,15 +147,52 @@ Práctica 1
     width: 45%;
 }
 
-.footer {
-	margin: 0px -10px -10px -10px; 
-	background-color: grey;
-	text-align: center;
-	width: calc(100% + 18px);
-	display: inline-block;
-}
-
 #img-strip {
     margin-top: -5px;
     border-top: solid 5px #ffff33;
 }
+
+/* Footer */
+footer {
+	margin: 80px -10px -10px -10px; 
+	background-color: #404040;
+	width: calc(100% + 18px);
+	display: inline-block;
+}
+
+.list-footer {
+    /* display: table; */
+    /* width: auto;
+    margin-left: auto;
+    margin-right: auto; */
+}
+
+.list-footer li {
+    float: left;
+    list-style: none;
+    padding: 30px;
+    padding-right: 80px;
+    /* margin-right: 1rem;
+    margin-left: 1rem; */
+}
+
+.list-footer p {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.list-footer h3 {
+    color: rgb(180, 180, 180);
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.list-footer img {
+    height: 80px;
+}
+
