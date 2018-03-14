@@ -155,9 +155,10 @@ Práctica 1
 /* Footer */
 footer {
 	margin: 80px -10px -10px -10px; 
-	background-color: #404040;
+	background-color: #4f4c4d;
 	width: calc(100% + 18px);
-	display: inline-block;
+    display: inline-block;
+    padding-bottom: 20px;
 }
 
 .list-footer {
@@ -170,17 +171,20 @@ footer {
 .list-footer li {
     float: left;
     list-style: none;
-    padding: 30px;
-    padding-right: 80px;
+    margin: 30px;
+    margin-right: 80px;
     /* margin-right: 1rem;
     margin-left: 1rem; */
 }
 
 .list-footer p {
-    color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     padding-left: 10px;
+}
+
+.list-footer a {
+    color: white;
 }
 
 .list-footer h3 {
@@ -193,6 +197,6 @@ footer {
 }
 
 .list-footer img {
-    height: 80px;
+    height: 70px;
 }
 
