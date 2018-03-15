@@ -5,8 +5,10 @@ Sistemas de Información Basados en Web
 Curso 2017 - 2018
 
 Práctica 1
+Estilos de página genéricos
 */
 
+/* All elements */
 * {
     text-decoration: none;
 }
