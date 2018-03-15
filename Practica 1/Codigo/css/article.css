@@ -1,0 +1,64 @@
+/* 
+David Vargas Carrillo
+Arturo Cortés Sánchez
+Sistemas de Información Basados en Web
+Curso 2017 - 2018
+
+Práctica 1
+Estilos para la vista de articulo
+*/
+
+/* Article view */
+.article {
+    padding: 10px;
+}
+
+.article > .img-container {
+    border-radius: 10px;
+    box-shadow: 0px 15px 20px #e6e6e6;
+    float: right;
+    width: 38%;
+    margin: 30px;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+.article > .img-container img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    filter: grayscale(100%);
+}
+
+.article > .img-container p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color:rgb(99, 99, 99);
+    font-size: 90%;
+}
+
+.article > .img-container img:hover {
+    filter: grayscale(0%);
+}
+
+
+.article h1 {
+    font-family: 'Lora', serif;
+    font-weight: normal;
+    font-size: 40px;
+}
+
+.article > .date {
+    font-family: 'Lora', sans-serif;
+    color:rgb(177, 0, 0);
+    margin-top: -15px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.article > .description {
+    font-family: 'Roboto', sans-serif;
+    padding-left: 20px;
+    padding-right: 30px;
+    color:rgb(99, 99, 99);
+}
