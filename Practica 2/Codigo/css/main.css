@@ -1,0 +1,195 @@
+/* 
+David Vargas Carrillo
+Arturo Cortés Sánchez
+Sistemas de Información Basados en Web
+Curso 2017 - 2018
+
+Práctica 1
+Estilos de página genéricos
+*/
+
+/* All elements */
+* {
+    text-decoration: none;
+}
+
+/* HEADER */
+.brand-name {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 250%;
+    font-weight: lighter;
+}
+
+.brand-name a {
+    color: black;
+}
+
+.navbar ul {
+    margin-top: 10px;
+    padding: 0;
+    width: auto;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar ul li {
+    float: left;
+    list-style: none;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.navbar a {
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+}
+
+.navbar .active {
+    color: black;
+}
+
+.navbar a:hover {
+    color: black;
+}
+
+#nav-strip {
+    height: 0px;
+    padding-bottom: 20px;
+    border-top: solid 1px lightgray;
+}
+
+/* CUERPO CENTRAL */
+/* Barra lateral */
+.sidebar {
+    float: left;
+    margin-right: 50px;
+    width: 20%;
+    height: 100%;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar li a {
+    display: block;
+    color: gray;
+    padding: 15px 20px 15px 16px;
+    font-family: 'Roboto', sans-serif;
+    text-align: right;
+    /* border-bottom: 1px solid lightgray; */
+}
+
+.sidebar li a:hover {
+    color: black;
+    /* background-color:#ffff33; */
+    /* border-radius: 8px; */
+    /* box-shadow: 0px 10px 10px #e6e6e6; */
+}
+
+.sidebar .active {
+    color: black;
+    background-color:#ffff33;
+    border-radius: 8px;
+    box-shadow: 0px 10px 20px #e6e6e6;
+}
+
+/* Parte central */
+.main {
+    float: left;
+    width: 70%;
+}
+
+.box {
+    border: 1px solid #f2f2f2;
+    border-radius: 20px;
+    box-shadow: 0px 15px 20px #e6e6e6;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.box img {
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.box h1, .box h2 {
+    font-family: 'Lora', serif;
+    font-weight: normal;
+    padding-left: 20px;
+}
+
+.box a {
+    color: black;
+}
+
+.box a:hover {
+    text-decoration: underline;
+}
+
+.box p {
+    font-family: 'Roboto', sans-serif;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    color: grey;
+}
+
+.secondary {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 33px;
+    margin-top: 20px;
+    width: 45%;
+}
+
+#img-strip {
+    margin-top: -5px;
+    border-top: solid 5px #ffff33;
+}
+
+/* Footer */
+footer {
+	margin: 80px -10px -20px -10px; 
+	background-color: #4f4c4d;
+	width: calc(100% + 18px);
+    display: inline-block;
+    padding-bottom: 20px;
+}
+
+.list-footer li {
+    float: left;
+    list-style: none;
+    margin: 30px;
+    margin-right: 80px;
+}
+
+.list-footer p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.list-footer a {
+    color: white;
+}
+
+.list-footer h3 {
+    color: rgb(180, 180, 180);
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.list-footer img {
+    height: 70px;
+}
+

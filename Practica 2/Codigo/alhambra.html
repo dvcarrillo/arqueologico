@@ -1,0 +1,137 @@
+<!--
+David Vargas Carrillo
+Arturo Cortés Sánchez
+Sistemas de Información Basados en Web
+Curso 2017 - 2018
+
+Práctica 2
+Vista de un articulo de la página
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Etiquetas meta requeridas -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/article.css">
+
+    <!-- Tipografias -->
+    <link href="https://fonts.googleapis.com/css?family=Lora|Playfair+Display|Roboto" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="script/comments.js"></script>
+
+    <title>La Alhambra: una nueva visión | Arqueológico Granada</title>
+</head>
+<body>
+    <!-- Barras de navegacion -->
+    <header>
+        <h1 class="brand-name"><a href="index.html">Arqueológico.</a></h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">EXPLORA</a></li>
+                <li><a href="#" class="active">EXPOSICIONES</a></li>
+                <li><a href="#">TIENDA</a></li>
+            </ul>
+        </nav>
+        <div id="nav-strip"/>
+    </header>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">AHORA</a></li>
+            <li><a href="#">EVENTOS</a></li>
+            <li><a href="#">EL MUSEO</a></li>
+            <li><a href="#">PRÓXIMAMENTE</a></li>
+            <li><a href="#">PLANEA TU VISITA</a></li>
+            <li><a href="#">HORARIOS Y TICKETS</a></li>
+        </ul>
+    </div>
+
+    <!-- Seccion principal -->
+    <div class="main">
+        <div class="article">
+            <h1>La Alhambra: una nueva visión</h1>
+            <p class="date">15/03/2018</p>
+            <div class="img-container">
+                <a href="img/alhambra-article.jpg"><img src="img/alhambra-article.jpg" alt=""></a>
+                <p>Patio en La Alhambra</p>
+            </div>
+            <p class="description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum auctor velit sit amet pretium. Integer in ultrices lorem, id congue ante. Quisque luctus, orci ut iaculis tristique, lacus orci efficitur tellus, non facilisis urna neque et risus. Duis sed turpis non tortor convallis congue quis nec nisl. Fusce nisi dolor, dignissim ut erat sit amet, sollicitudin placerat nunc. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam gravida laoreet ligula a fermentum.
+            </p>
+            <p class="description">
+                    Mauris pulvinar bibendum egestas. Quisque luctus laoreet nunc non cursus. Phasellus aliquam risus lectus, sed mattis est cursus sit amet. Duis vitae lacinia ipsum. Integer tellus dolor, rhoncus at ipsum eu, hendrerit lobortis leo. In commodo mi orci, a consectetur quam congue nec. Etiam pellentesque arcu eget scelerisque sagittis. Curabitur et tellus eget sapien pharetra fermentum. Morbi erat nibh, volutpat vitae mauris id, fringilla ultrices mauris. Fusce vitae hendrerit mauris. Mauris arcu lectus, porttitor nec risus ac, aliquam volutpat lacus.
+            </p>
+            <p class="description">
+                    Suspendisse tempor ante non finibus euismod. Duis lectus leo, interdum et scelerisque quis, dictum at eros. Maecenas interdum tellus libero, vel dapibus urna elementum in. Cras ac nisi eu nisl dignissim tempor. Suspendisse ac leo nibh. Sed pharetra felis eu est dapibus ultricies. Nunc molestie ex eu blandit rhoncus. Cras molestie augue auctor magna egestas mollis. Nunc quis lacus vel felis finibus dapibus. Sed et consequat neque. Morbi maximus felis et mollis egestas. Nam semper accumsan iaculis. Duis sit amet erat orci. Nulla ultricies, tellus vitae hendrerit viverra, arcu tellus sodales libero, vel mollis sem arcu sit amet dolor. Fusce pretium massa dui.        
+            </p>
+            <p class="description">
+                    Curabitur vitae quam vitae magna dictum facilisis ut eu eros. Phasellus ex mi, interdum sed feugiat id, placerat et lorem. Curabitur varius luctus nunc, sit amet semper leo lobortis non. Donec congue est ut dolor gravida, nec convallis diam condimentum. Fusce at gravida orci. Suspendisse potenti. Sed sodales semper dolor sit amet sagittis.
+            </p>
+            <!-- Botones de interaccion -->
+            <button class="article-button" type="button" onclick="showComments();"><span id="num-comments">0</span> comentarios</button>
+            <a href="print-alhambra.html"><button class="article-button" type="button">Imprimir artículo</button></a>
+            <!-- Bloque de comentarios -->
+            <div class="comments-block" id="comments-block">
+                <h2>Comentarios</h2>
+                <div id="comment-list">
+                    <div class="comment">
+                        <div class="profile-img">
+                            <img src="img/avatar/david.jpg" alt="avatar">
+                        </div>
+                        <div class="comment-text">
+                            <p class="comment-author">#<span id="comment-number">1</span> <span id="author-name">David Vargas</span><!-- : --></p>
+                            <p class="comment-content" id="comment-content">Gran artículo, ¡tendré que ir a verla!</p>
+                            <p class="comment-date">A las 16:45:40 el 21 de marzo de 2018</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="profile-img">
+                            <img src="img/avatar/sissy.png" alt="avatar">
+                        </div>
+                        <div class="comment-text">
+                            <p class="comment-author">#<span id="comment-number">2</span> <span id="author-name">Holly</span><!-- : --></p>
+                            <p class="comment-content" id="comment-content">Love the Alhambra, looking forward to my trip to Granada on July!</p>
+                            <p class="comment-date">A las 21:10:44 el 21 de marzo de 2018</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Nuevo comentario -->
+                <div class="profile-img">
+                        <img src="img/avatar/avatar.png" alt="avatar">
+                </div>
+                <form class="comment-form">
+                    <textarea class="new-comment-text" id="comment-field" name="comment" placeholder="Introduce tu comentario..."></textarea>
+                    <input class="new-comment-name" id="name-field" type="text" placeholder="Nombre">
+                    <input class="new-comment-email" id="email-field" type="text" placeholder="Correo electrónico">
+                    <input class="new-comment-button" id="comment-button" type="button" onclick="addComment();" value="Comentar">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de pagina -->
+    <footer>
+        <ul class="list-footer">
+            <li><img src="img/logos/junta.png" alt="Logo Junta de Andalucia"></li>
+            <li><img src="img/logos/ugr.png" alt="Logo Universidad de Granada"></li>
+            <li>
+                <h3>ENLACES DE INTERÉS</h3>
+                <p><a href="#">Cultura en Granada</a></p>
+                <p><a href="#">Museos de Andalucía</a></p>
+            </li>
+            <li>
+                <h3>ARQUEOLÓGICO SOCIAL</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">Instagram</a></p>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
