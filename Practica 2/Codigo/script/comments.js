@@ -15,8 +15,14 @@ let num_comments = 2;
 */
 window.onload = function () {
     console.log("Ventana cargada, hay " + num_comments + " comentarios!");
-    document.getElementById("num-comments").innerText = num_comments;
+    updateNumComments(num_comments);
 };
+
+/* Modifica el numero de comentarios mostrado en el boton
+*/
+function updateNumComments(num) {
+    document.getElementById("num-comments").innerText = num_comments;
+}
 
 /* Muestra u oculta la seccion de comentarios
 */
@@ -49,6 +55,7 @@ function addComment() {
     var time = date.toTimeString().split(' ')[0];
     var date_string = " A las " + time + " el " + day + " de " + month + " de " + year;
 
+    // Actualiza la vista con un nuevo bloque de comentario
     var new_comment =
         '<div class="comment">\n' +
             '<div class="profile-img">\n' + 
@@ -60,12 +67,14 @@ function addComment() {
                 '<p class="comment-date">' + date_string + '</p>\n' +
             '</div>\n' +
         '</div>\n';
-
     document.getElementById("comment-list").innerHTML += new_comment;
 
+    // Actualiza el numero de comentarios
+    updateNumComments(num_comments);
+    console.log(num_comments);
+
+    // Limpia los campos del formulario
     document.getElementById("name-field").value = "";
     document.getElementById("email-field").value = "";
     document.getElementById("comment-field").value = "";
-
-    console.log(name + " (" + email + ") ha comentado: " + comment);
 }

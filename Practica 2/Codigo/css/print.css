@@ -61,7 +61,7 @@ Estilos para la vista de impresion
 }
 
 .article > .description {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Playfair Display', serif;
     color:black;
     text-align: justify;
 }
