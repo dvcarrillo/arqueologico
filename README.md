@@ -7,5 +7,6 @@ Works for the course of Web Development at the University of Granada. Made toget
 
 ## Specifications
 
-- **Practice 1:** HTML and CSS.
-- **More to come!**
+- **Practice 1:** HTML and CSS. Design of main page, article view and print view.
+- **Practice 2:** Javascript. Addition of comments to article view.
+
