@@ -5,10 +5,7 @@ Works for the course of Web Development at the University of Granada. Made toget
 - David Vargas ([@dvcarrillo](http://github.com/dvcarrillo))
 - Arturo Cortés ([@arturocs](http://github.com/arturocs))
 
-[Live website (latest version)](https://dvcarrillo.github.io/ugr-web-development/Practica%202/Codigo/index.html)
-
 ## Specifications
-
-- **Practice 1:** HTML and CSS. Design of main page, article view and print view.
-- **Practice 2:** Javascript. Addition of comments to article view.
-
+Click on any title to see it live.
+- [**Practice 1:**](https://dvcarrillo.github.io/ugr-web-development/Practica%201/Codigo/index.html) HTML and CSS. Design of main page, article view and print view.
+- [**Practice 2:**](https://dvcarrillo.github.io/ugr-web-development/Practica%202/Codigo/index.html) Javascript. Addition of comments to article view.
