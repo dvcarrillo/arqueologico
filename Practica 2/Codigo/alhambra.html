@@ -4,7 +4,7 @@ Arturo Cortés Sánchez
 Sistemas de Información Basados en Web
 Curso 2017 - 2018
 
-Práctica 1
+Práctica 2
 Vista de un articulo de la página
 -->
 
@@ -22,9 +22,13 @@ Vista de un articulo de la página
     <!-- Tipografias -->
     <link href="https://fonts.googleapis.com/css?family=Lora|Playfair+Display|Roboto" rel="stylesheet">
 
+    <!-- Scripts -->
+    <script src="script/comments.js"></script>
+
     <title>La Alhambra: una nueva visión | Arqueológico Granada</title>
 </head>
 <body>
+    <!-- Barras de navegacion -->
     <header>
         <h1 class="brand-name"><a href="index.html">Arqueológico.</a></h1>
         <nav class="navbar">
@@ -48,6 +52,7 @@ Vista de un articulo de la página
         </ul>
     </div>
 
+    <!-- Seccion principal -->
     <div class="main">
         <div class="article">
             <h1>La Alhambra: una nueva visión</h1>
@@ -57,36 +62,60 @@ Vista de un articulo de la página
                 <p>Patio en La Alhambra</p>
             </div>
             <p class="description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum aspernatur et maiores veniam velit sequi repudiandae maxime, voluptatibus perferendis perspiciatis molestiae nostrum explicabo voluptatem omnis labore distinctio? Magnam, consequuntur illum.
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto doloribus incidunt minima eligendi blanditiis fuga, atque, aut dolore voluptatum voluptatem repudiandae quia? Delectus illo maxime qui possimus fugit, hic ab.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ipsa aliquid totam, repudiandae fuga enim dicta delectus, amet itaque labore commodi dignissimos. Ullam excepturi iusto quos dolorum deserunt obcaecati ea.
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, ratione? Nam, dolore corporis, consequuntur laborum modi necessitatibus alias reprehenderit commodi, beatae est quidem minima dolorem non distinctio dignissimos nihil labore.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum auctor velit sit amet pretium. Integer in ultrices lorem, id congue ante. Quisque luctus, orci ut iaculis tristique, lacus orci efficitur tellus, non facilisis urna neque et risus. Duis sed turpis non tortor convallis congue quis nec nisl. Fusce nisi dolor, dignissim ut erat sit amet, sollicitudin placerat nunc. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam gravida laoreet ligula a fermentum.
             </p>
             <p class="description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum aspernatur et maiores veniam velit sequi repudiandae maxime, voluptatibus perferendis perspiciatis molestiae nostrum explicabo voluptatem omnis labore distinctio? Magnam, consequuntur illum.
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto doloribus incidunt minima eligendi blanditiis fuga, atque, aut dolore voluptatum voluptatem repudiandae quia? Delectus illo maxime qui possimus fugit, hic ab.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ipsa aliquid totam, repudiandae fuga enim dicta delectus, amet itaque labore commodi dignissimos. Ullam excepturi iusto quos dolorum deserunt obcaecati ea.
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, ratione? Nam, dolore corporis, consequuntur laborum modi necessitatibus alias reprehenderit commodi, beatae est quidem minima dolorem non distinctio dignissimos nihil labore.
+                    Mauris pulvinar bibendum egestas. Quisque luctus laoreet nunc non cursus. Phasellus aliquam risus lectus, sed mattis est cursus sit amet. Duis vitae lacinia ipsum. Integer tellus dolor, rhoncus at ipsum eu, hendrerit lobortis leo. In commodo mi orci, a consectetur quam congue nec. Etiam pellentesque arcu eget scelerisque sagittis. Curabitur et tellus eget sapien pharetra fermentum. Morbi erat nibh, volutpat vitae mauris id, fringilla ultrices mauris. Fusce vitae hendrerit mauris. Mauris arcu lectus, porttitor nec risus ac, aliquam volutpat lacus.
+            </p>
+            <p class="description">
+                    Suspendisse tempor ante non finibus euismod. Duis lectus leo, interdum et scelerisque quis, dictum at eros. Maecenas interdum tellus libero, vel dapibus urna elementum in. Cras ac nisi eu nisl dignissim tempor. Suspendisse ac leo nibh. Sed pharetra felis eu est dapibus ultricies. Nunc molestie ex eu blandit rhoncus. Cras molestie augue auctor magna egestas mollis. Nunc quis lacus vel felis finibus dapibus. Sed et consequat neque. Morbi maximus felis et mollis egestas. Nam semper accumsan iaculis. Duis sit amet erat orci. Nulla ultricies, tellus vitae hendrerit viverra, arcu tellus sodales libero, vel mollis sem arcu sit amet dolor. Fusce pretium massa dui.        
+            </p>
+            <p class="description">
+                    Curabitur vitae quam vitae magna dictum facilisis ut eu eros. Phasellus ex mi, interdum sed feugiat id, placerat et lorem. Curabitur varius luctus nunc, sit amet semper leo lobortis non. Donec congue est ut dolor gravida, nec convallis diam condimentum. Fusce at gravida orci. Suspendisse potenti. Sed sodales semper dolor sit amet sagittis.
             </p>
             <!-- Botones de interaccion -->
-            <a href="#"><button class="article-button" type="button"><span id="num-comments">X</span> comentarios</button></a>
+            <button class="article-button" type="button" onclick="showComments();"><span id="num-comments">0</span> comentarios</button>
             <a href="print-alhambra.html"><button class="article-button" type="button">Imprimir artículo</button></a>
             <!-- Bloque de comentarios -->
-            <div class="comments-block">
-                <div class="comment">
-                    <div class="profile-img">
-                        <img src="img/avatar/avatar.png" alt="avatar">
+            <div class="comments-block" id="comments-block">
+                <h2>Comentarios</h2>
+                <div id="comment-list">
+                    <div class="comment">
+                        <div class="profile-img">
+                            <img src="img/avatar/david.jpg" alt="avatar">
+                        </div>
+                        <div class="comment-text">
+                            <p class="comment-author">#<span id="comment-number">1</span> <span id="author-name">David Vargas</span><!-- : --></p>
+                            <p class="comment-content" id="comment-content">Gran artículo, ¡tendré que ir a verla!</p>
+                            <p class="comment-date">A las 16:45:40 el 21 de marzo de 2018</p>
+                        </div>
                     </div>
-                    <div class="comment-text">
-                        <p class="comment-author"><span id="author-name">Comment name</span><!-- : --></p>
-                        <p class="comment-content" id="comment-content">Comment</p>
-                        <p class="comment-date">00/00/0000</p>
+                    <div class="comment">
+                        <div class="profile-img">
+                            <img src="img/avatar/sissy.png" alt="avatar">
+                        </div>
+                        <div class="comment-text">
+                            <p class="comment-author">#<span id="comment-number">2</span> <span id="author-name">Holly</span><!-- : --></p>
+                            <p class="comment-content" id="comment-content">Love the Alhambra, looking forward to my trip to Granada on July!</p>
+                            <p class="comment-date">A las 21:10:44 el 21 de marzo de 2018</p>
+                        </div>
                     </div>
                 </div>
+                <!-- Nuevo comentario -->
+                <div class="profile-img">
+                        <img src="img/avatar/avatar.png" alt="avatar">
+                </div>
+                <form class="comment-form">
+                    <textarea class="new-comment-text" id="comment-field" name="comment" placeholder="Introduce tu comentario..."></textarea>
+                    <input class="new-comment-name" id="name-field" type="text" placeholder="Nombre">
+                    <input class="new-comment-email" id="email-field" type="text" placeholder="Correo electrónico">
+                    <input class="new-comment-button" id="comment-button" type="button" onclick="addComment();" value="Comentar">
+                </form>
             </div>
         </div>
     </div>
 
+    <!-- Pie de pagina -->
     <footer>
         <ul class="list-footer">
             <li><img src="img/logos/junta.png" alt="Logo Junta de Andalucia"></li>
