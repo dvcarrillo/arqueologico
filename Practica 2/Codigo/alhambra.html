@@ -79,23 +79,32 @@ Vista de un articulo de la página
             <!-- Bloque de comentarios -->
             <div class="comments-block" id="comments-block">
                 <h2>Comentarios</h2>
+                <!-- Informacion sobre el autor -->
+                <div class="author-info" id="author-box">
+                    <img id="author-info-avatar" src="img/avatar/david.jpg" alt="avatar del autor">
+                    <h3 id="author-info-name">David Vargas</h3>
+                    <p id="author-info-subtitle">Usuario registrado</p>
+                    <button id="author-info-close" class="close" onclick="showInfoBox();">Cerrar</button>
+                </div>
+                <!-- Lista de comentarios -->
                 <div id="comment-list">
-                    <div class="comment">
+                    <div class="comment" id="comment-1">
                         <div class="profile-img">
-                            <img src="img/avatar/david.jpg" alt="avatar">
+                            <img id="comment-avatar" src="img/avatar/david.jpg" alt="avatar" onclick="showInfoBox(1, 'David Vargas', 'david.jpg');">
                         </div>
                         <div class="comment-text">
-                            <p class="comment-author">#<span id="comment-number">1</span> <span id="author-name">David Vargas</span><!-- : --></p>
+                            <p class="comment-author">#<span id="comment-number">1</span> <span id="author-name" onclick="showInfoBox(1, 'David Vargas', 'david.jpg');">David Vargas</span><!-- : --></p>
                             <p class="comment-content" id="comment-content">Gran artículo, ¡tendré que ir a verla!</p>
                             <p class="comment-date">A las 16:45:40 el 21 de marzo de 2018</p>
                         </div>
+                        
                     </div>
-                    <div class="comment">
+                    <div class="comment" id="comment-2">
                         <div class="profile-img">
-                            <img src="img/avatar/sissy.png" alt="avatar">
+                            <img id="comment-avatar" src="img/avatar/sissy.png" alt="avatar" onclick="showInfoBox(2, 'Holly', 'sissy.png');">
                         </div>
                         <div class="comment-text">
-                            <p class="comment-author">#<span id="comment-number">2</span> <span id="author-name">Holly</span><!-- : --></p>
+                            <p class="comment-author">#<span id="comment-number">2</span> <span id="author-name" onclick="showInfoBox(2, 'Holly', 'sissy.png');">Holly</span><!-- : --></p>
                             <p class="comment-content" id="comment-content">Love the Alhambra, looking forward to my trip to Granada on July!</p>
                             <p class="comment-date">A las 21:10:44 el 21 de marzo de 2018</p>
                         </div>

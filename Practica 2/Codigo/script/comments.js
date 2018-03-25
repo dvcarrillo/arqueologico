@@ -29,11 +29,30 @@ function updateNumComments(num) {
 function showComments() {
     var element = document.getElementById("comments-block");
 
-    if (element.style.display == 'block') {
-        element.style.display = 'none';
-    } else {
-        element.style.display = 'block';
-    } 
+    if (element.style.display == "block")
+        element.style.display = "none";
+    else
+        element.style.display = "block";
+}
+
+/* Muestra u oculta la informacion del autor
+*/
+function showInfoBox(commentNumber, authorName, imageName) {
+    var element = document.getElementById("author-box");
+
+    if (element.style.display == "inline-block")
+        element.style.display = "none";
+    else {
+        document.getElementById("author-info-name").innerHTML = authorName;
+        let imagePath = "img/avatar/" + imageName;
+        document.getElementById("author-info-avatar").src = imagePath;
+        if (imageName == "avatar.png") 
+            document.getElementById("author-info-subtitle").innerHTML = "Usuario invitado";
+        else
+            document.getElementById("author-info-subtitle").innerHTML = "Usuario registrado";
+        element.style.top = (153 * (commentNumber - 1)) + "px";
+        element.style.display = "inline-block";
+    }
 }
 
 /* Inserta un nuevo comentario
@@ -57,12 +76,12 @@ function addComment() {
 
     // Actualiza la vista con un nuevo bloque de comentario
     var new_comment =
-        '<div class="comment">\n' +
+        '<div class="comment" id="comment-' + num_comments + '">\n' +
             '<div class="profile-img">\n' + 
-                '<img src="img/avatar/avatar.png" alt="avatar">\n' +
+                '<img id="comment-avatar" src="img/avatar/avatar.png" alt="avatar" onclick="showInfoBox(' + num_comments + ', \'' + name + '\', \'avatar.png\');">\n' +
             '</div>\n' + 
             '<div class="comment-text">\n' +
-                '<p class="comment-author">#<span id="comment-number">' + num_comments + '</span> <span id="author-name">' + name + '</span><!-- : --></p>\n' +
+                '<p class="comment-author">#<span id="comment-number">' + num_comments + '</span> <span id="author-name" onclick="showInfoBox(' + num_comments + ', \'' + name + '\', \'avatar.png\');">' + name + '</span><!-- : --></p>\n' +
                 '<p class="comment-content" id="comment-content">' + comment + '</p>\n' +
                 '<p class="comment-date">' + date_string + '</p>\n' +
             '</div>\n' +
@@ -71,7 +90,6 @@ function addComment() {
 
     // Actualiza el numero de comentarios
     updateNumComments(num_comments);
-    console.log(num_comments);
 
     // Limpia los campos del formulario
     document.getElementById("name-field").value = "";
