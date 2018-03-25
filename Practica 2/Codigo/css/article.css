@@ -82,6 +82,7 @@ Estilos para la vista de articulo
 /* Comments view */
 .comments-block {
     display: none;
+    position: relative;
     font-family: 'Roboto', sans-serif;
     margin-top: 40px;
 }
@@ -115,6 +116,7 @@ Estilos para la vista de articulo
 
 .comment-author > #author-name {
     font-weight: bold;
+    cursor: pointer;
 }
 
 .comment-date {
@@ -129,8 +131,55 @@ Estilos para la vista de articulo
     margin-top: 0px;
 }
 
+.author-info {
+    position: absolute;
+    display: none;
+    background-color: white;
+    box-shadow: 0px 15px 20px #e6e6e6;
+    border-radius: 10px;
+    top: 0%;
+    left: -30%;
+    font-style: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.author-info > h3 {
+    font-weight: lighter;
+    color: rgb(59, 59, 59);
+    margin-bottom: 0;
+}
+
+.author-info > p {
+    color: grey;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.author-info > img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 250px;
+    width: 250px;
+}
+
+.author-info > button {
+    border: 1px solid rgb(177, 0, 0);
+    border-radius: 5px;
+    padding: 8px;
+    background-color: white;
+    color: rgb(177, 0, 0);
+    font-size: 12px;
+    left: auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.author-info > button:hover {
+    background-color: rgb(177, 0, 0);
+    color: white;
+}
+
 .new-comment-title {
-    /* color: grey; */
     font-weight: bold;
 }
 
@@ -154,6 +203,7 @@ Estilos para la vista de articulo
     font-size: 16px;
     width: 30%;
 }
+
 .new-comment-email {
     border: 1px solid rgb(161, 161, 161);
     margin-top: 10px;
