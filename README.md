@@ -1,4 +1,4 @@
-# University of Granada - Web Development
+# Universidad de Granada - Web Development
 
 Works for the course of Web Development at the University of Granada. Made together by:
 
