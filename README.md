@@ -1,6 +1,6 @@
 # Universidad de Granada - Web Development
 
-Works for the course of Web Development at the University of Granada. Made together by:
+Works for the course of Web Development at the Universidad de Granada. Made together by:
 
 - David Vargas ([@dvcarrillo](http://github.com/dvcarrillo))
 - Arturo Cortés ([@arturocs](http://github.com/arturocs))
