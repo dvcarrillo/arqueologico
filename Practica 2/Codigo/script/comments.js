@@ -139,20 +139,17 @@ function censorBeep(){
 	var regxp =  /tont.|idiota|mierda|estupid.|imbecil|caca/i;
 	var ban = regxp.exec(comment);
 
-	if (ban[0]!=""){
-		comment = comment.replace(ban,'*'.repeat(ban[0].length));
+	if (ban != null) {
+		if (ban[0]!=""){
+			comment = comment.replace(ban,'*'.repeat(ban[0].length));
+		}
 	}
+
 	document.getElementById("comment-field").value = comment; 
 }
 
-function banWords(){
-	document.body.onkeyup = function(e){
-		if(e.keyCode == 32){
-			censorBeep()
-		}
-	}
-	var form =  document.getElementById("comment-field");
-	form.addEventListener("blur", function( event ) {
+function banWords(event){
+	var char = event.which || event.keyCode;
+	if (char == 32)
 		censorBeep();
-	}, true);
 }
