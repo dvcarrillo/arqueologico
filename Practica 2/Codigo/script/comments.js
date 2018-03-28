@@ -48,13 +48,13 @@ function isCommentOk(name, email, comment){
 	var error = "";
 	
 	if (name == ""){
-		error += "El nombre está vacio\n";
+		error += "El nombre está vacío\n";
 	}
 	if (!validateEmail(email)){
-		error += "e-mail inválido\n";
+		error += "El correo especificado es inválido\n";
 	}
 	if (comment === ""){
-		error += "El comentario está vacio\n";
+		error += "El comentario está vacío\n";
 	}
 	if (error != ""){
 		alert(error);
