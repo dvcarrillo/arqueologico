@@ -35,13 +35,15 @@ function showComments() {
         element.style.display = "block";
 }
 
-// Thanks stackoverflow
+/** Comprueba que el email es correcto
+*/
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
 
-// Comprueba que el comentario está correcto
+/** Comprueba que el comentario está correcto
+*/
 function isCommentOk(name, email, comment){
 	var error = "";
 	
@@ -130,11 +132,12 @@ function addComment() {
 	}
 }
 
-//Censura las palabras prohibidas 
+/** Censura las palabras prohibidas 
+*/
 function censorBeep(){
 	var comment = document.getElementById("comment-field").value;
-	var regxp =  /mierda|puta|gilipollas|subnormal/i
-	var ban = regxp.exec(comment)
+	var regxp =  /tont.|idiota|mierda|estupid.|imbecil|caca/i;
+	var ban = regxp.exec(comment);
 
 	if (ban[0]!=""){
 		comment = comment.replace(ban,'*'.repeat(ban[0].length));
