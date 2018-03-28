@@ -115,7 +115,7 @@ Vista de un articulo de la página
                         <img src="img/avatar/avatar.png" alt="avatar">
                 </div>
                 <form class="comment-form">
-                    <textarea class="new-comment-text" id="comment-field" name="comment" onkeypress="banWords()" placeholder="Introduce tu comentario..."></textarea>
+                    <textarea class="new-comment-text" id="comment-field" name="comment" onkeypress="banWords(event);" onfocusout="censorBeep();" placeholder="Introduce tu comentario..."></textarea>
                     <input class="new-comment-name" id="name-field" type="text" placeholder="Nombre">
                     <input class="new-comment-email" id="email-field" type="email" placeholder="Correo electrónico">
                     <input class="new-comment-button" id="comment-button" type="button" onclick="addComment();" value="Comentar">
