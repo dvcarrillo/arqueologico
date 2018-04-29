@@ -11,6 +11,7 @@ Archivo principal de la pagina que enlaza con el resto
 -->
 
 <?php
+
     require_once('db/db.php');
 
     // GET petition check

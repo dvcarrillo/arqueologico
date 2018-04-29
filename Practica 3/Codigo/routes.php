@@ -26,16 +26,34 @@ function call($option, $item) {
     // require the file that matches the controller name
     require_once('controllers/article_controller.php');
 
+    $correcto=true;
     $action = $option;
     // create a new instance of the needed controller
     switch($option) {
-        case 'pages':
-            $option = new PageController();
-            break;
+       /* case 'pages':
+            $option = new ArticleController();
+            break;*/
+        case 'show':
+            $option = new ArticleController();
+            break;   
+        case 'index':
+            $option = new ArticleController();
+            break;   
+        case 'error':
+            $option = new ArticleController();
+            break;       
+        default:
+            $correcto=false;
+            call('error', 'error');  
+            break;    
     }
 
     // call the item
-    $option->{ $action }($item);
+    //$option->{ $action }($item);
+    if($correcto)
+        $option->{ $action }();
+    //$option->show();
+    //echo($option);
 }
 
 // check that the requested controller and action are both allowed
@@ -43,7 +61,7 @@ function call($option, $item) {
 if (is_numeric($item)) {
     call($option, $item);
 } else {
-    call('pages', 'error');
+    call('error', 'error');
 }
 
 ?>

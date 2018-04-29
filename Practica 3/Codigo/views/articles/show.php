@@ -1,7 +1,7 @@
 <div class="main">
     <div class="article">
-        <h1><?php echo $article->titulo; ?>/h1>
-        <p class="date"><?php echo $article->fecha; ?>/p>
+        <h1><?php echo $article->titulo; ?></h1>
+        <p class="date"><?php echo $article->fecha; ?></p>
         <div class="img-container">
             <a href="<?php echo $article->imagenes; ?>"><img src="<?php echo $article->imagenes; ?>" alt=""></a>
             <p>Patio en La Alhambra</p>
