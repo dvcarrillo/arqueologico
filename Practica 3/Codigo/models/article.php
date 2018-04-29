@@ -14,18 +14,18 @@
 class Article
 {
     // Atributos del articulo
-    private $id_articulo;
-    private $titulo;
-    private $subtitulo;
-    private $fecha;
-    private $contenido;
-    private $imagen_principal;
-    private $imagenes;
-    private $pie_imagen;
+    public $id;
+    public $titulo;
+    public $subtitulo;
+    public $fecha;
+    public $contenido;
+    public $imagen_principal;
+    public $imagenes;
+    public $pie_imagen;
 
     /**
      * Article constructor.
-     * @param $id_articulo
+     * @param $id
      * @param $titulo
      * @param $subtitulo
      * @param $fecha
@@ -34,9 +34,9 @@ class Article
      * @param $imagenes
      * @param $pie_imagen
      */
-    public function __construct($id_articulo, $titulo, $subtitulo, $fecha, $contenido, $imagen_principal, $imagenes, $pie_imagen)
+    public function __construct($id, $titulo, $subtitulo, $fecha, $contenido, $imagen_principal, $imagenes, $pie_imagen)
     {
-        $this->id_articulo = $id_articulo;
+        $this->id = $id;
         $this->titulo = $titulo;
         $this->subtitulo = $subtitulo;
         $this->fecha = $fecha;
@@ -46,134 +46,30 @@ class Article
         $this->pie_imagen = $pie_imagen;
     }
 
-    /**** GET AND SET METHODS ****/
+    public static function all() {
+        $list = [];
+        $db = ConexionDB::getInstance();
+        $result = $db->query('SELECT * FROM articulos');
 
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id_articulo;
+        foreach($result->fetchAll() as $article) {
+            $list[] = new Article($article['id'], $article['titulo'], $article['subtitulo'], $article['fecha'],
+                $article['contenido'], $article['imagen_principal'], $article['imagenes'], $article['pie_imagen']);
+        }
+
+        return $list;
     }
 
-    /**
-     * @param mixed $id_articulo
-     */
-    public function setId($id_articulo)
-    {
-        $this->id_articulo = $id_articulo;
-    }
+    public static function find($id) {
+        $db = ConexionDB::getInstance();
+        // Check that id is integer
+        $id = intval($id);
+        $result = $db->prepare('SELECT * FROM articulos WHERE id = :id');
 
-    /**
-     * @return mixed
-     */
-    public function getTitulo()
-    {
-        return $this->titulo;
-    }
+        $result->execute(array('id' => $id));
+        $article = $result->fetch();
 
-    /**
-     * @param mixed $titulo
-     */
-    public function setTitulo($titulo)
-    {
-        $this->titulo = $titulo;
+        return new Article($article['id'], $article['titulo'], $article['subtitulo'], $article['fecha'],
+            $article['contenido'], $article['imagen_principal'], $article['imagenes'], $article['pie_imagen']);
     }
-
-    /**
-     * @return mixed
-     */
-    public function getSubtitulo()
-    {
-        return $this->subtitulo;
-    }
-
-    /**
-     * @param mixed $subtitulo
-     */
-    public function setSubtitulo($subtitulo)
-    {
-        $this->subtitulo = $subtitulo;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFecha()
-    {
-        return $this->fecha;
-    }
-
-    /**
-     * @param mixed $fecha
-     */
-    public function setFecha($fecha)
-    {
-        $this->fecha = $fecha;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getContenido()
-    {
-        return $this->contenido;
-    }
-
-    /**
-     * @param mixed $contenido
-     */
-    public function setContenido($contenido)
-    {
-        $this->contenido = $contenido;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getImagenPrincipal()
-    {
-        return $this->imagen_principal;
-    }
-
-    /**
-     * @param mixed $imagen_principal
-     */
-    public function setImagenPrincipal($imagen_principal)
-    {
-        $this->imagen_principal = $imagen_principal;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getImagenes()
-    {
-        return $this->imagenes;
-    }
-
-    /**
-     * @param mixed $imagenes
-     */
-    public function setImagenes($imagenes)
-    {
-        $this->imagenes = $imagenes;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPieImagen()
-    {
-        return $this->pie_imagen;
-    }
-
-    /**
-     * @param mixed $pie_imagen
-     */
-    public function setPieImagen($pie_imagen)
-    {
-        $this->pie_imagen = $pie_imagen;
-    }
-
 }
+?>

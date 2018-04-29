@@ -13,18 +13,22 @@
 
 class ConexionDB
 {
+    private static $instance = NULL;
+
     private $servername = "localhost";
     private $dbname = "arqueologico";
     private $username = "root";
     private $password = "";
 
-    public function connect() {
-        $connection = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
+    private function __construct() {}
 
-        if ($connection->connect_error) {
-            die("Connection to database failed: " . $connection->connect_error);
+    private function __clone() {}
+
+    public static function getInstance() {
+        if (!isset(self::$instance)) {
+            $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
+            self::$instance = new PDO('mysql:host=localhost;dbname=arqueologico', 'root', '', $pdo_options);
         }
-
-        return $connection;
+        return self::$instance;
     }
 }
