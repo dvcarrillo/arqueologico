@@ -176,4 +176,41 @@ class Comment
         $this->id_articulo = $id_articulo;
     }
 
+    public static function all() {
+        $list = [];
+        $db = ConexionDB::getInstance();
+        $result = $db->query('SELECT * FROM comentarios');
+
+        foreach($result->fetchAll() as $comment) {
+            $list[] = new Comment($comment['id'], $comment['nombre'], $comment['fecha'], $comment['hora'],
+                $comment['contenido'], $comment['email'], $comment['imagen'], $comment['articulo']);
+        }
+
+        return $list;
+    }
+
+    public static function find($article) {
+        $db = ConexionDB::getInstance();
+        $list = [];
+        // Check that id is integer
+        $article = intval($article);
+        $result = $db->prepare('SELECT * FROM comentarios WHERE article = :article');
+
+
+        foreach($result->fetchAll() as $comment) {
+            $list[] = new Comment($comment['id'], $comment['nombre'], $comment['fecha'], $comment['hora'],
+                $comment['contenido'], $comment['email'], $comment['imagen'], $comment['articulo']);
+        }
+
+        return $list;
+
+
+       /* $result->execute(array('article' => $article));
+        $comment = $result->fetch();
+
+        return new new Comment($comment['id'], $comment['nombre'], $comment['fecha'], $comment['hora'],
+        $comment['contenido'], $comment['email'], $comment['imagen'], $comment['articulo']);
+    }*/
+}
+
 }
