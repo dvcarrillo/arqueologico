@@ -10,6 +10,7 @@ class ArticleController
 {
     public function __construct() {
         require_once('models/article.php');
+        require_once('models/comment.php');
     }
 
     public function index() {
@@ -26,12 +27,14 @@ class ArticleController
         // An URL is expected of form ?option=article&id=XX
         // without an ID, it redirects to the error page
         $articles = Article::all();
+        $comments = Comment::all();
 
         if ((!isset($_GET['item']) || ($_GET['item'] >= count($articles)))) {
             call('error', 'error');
         }
         else {
             $article = Article::find($_GET['item']);
+            $comment = Comment::find($article->id);
             require_once('views/articles/show.php');
         }
     }
