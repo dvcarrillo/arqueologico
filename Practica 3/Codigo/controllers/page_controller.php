@@ -13,9 +13,7 @@ class PageController
     }
 
     public function article() {
-
         require_once('views/articles/show.php');
-
     }
 
     public function error() {

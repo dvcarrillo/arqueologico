@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Estilos -->
-        <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="css/article.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="css/print.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="views/css/main.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="views/css/article.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="views/css/print.css">
 
         <!-- Tipografias -->
         <link href="https://fonts.googleapis.com/css?family=Lora|Playfair+Display|Roboto" rel="stylesheet">
@@ -20,7 +20,7 @@
     </head>
     <body>
         <header>
-            <h1 class="brand-name"><a href="index.html">Arqueológico.</a></h1>
+            <h1 class="brand-name"><a href="?option=index&item=1&id=1">Arqueológico.</a></h1>
             <nav class="navbar">
                 <ul>
                     <li><a href="#" class="active">EXPLORA</a></li>
@@ -46,8 +46,8 @@
 
         <footer>
             <ul class="list-footer">
-                <li><img src="img/logos/junta.png" alt="Logo Junta de Andalucia"></li>
-                <li><img src="img/logos/ugr.png" alt="Logo Universidad de Granada"></li>
+                <li><img src="views/img/logos/junta.png" alt="Logo Junta de Andalucia"></li>
+                <li><img src="views/img/logos/ugr.png" alt="Logo Universidad de Granada"></li>
                 <li>
                     <h3>ENLACES DE INTERÉS</h3>
                     <p><a href="#">Cultura en Granada</a></p>

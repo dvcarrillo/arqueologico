@@ -1,4 +1,4 @@
-<!-- ¡
+<!--
 Sistemas de Información Basados en Web
 Curso 2017 - 2018
 Práctica 3
@@ -11,7 +11,6 @@ Archivo principal de la pagina que enlaza con el resto
 -->
 
 <?php
-
     require_once('db/db.php');
 
     // GET petition check

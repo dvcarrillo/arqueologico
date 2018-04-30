@@ -8,13 +8,11 @@
 
 class ArticleController
 {
-
-    public function __construct(){
-        require_once('/opt/lampp/htdocs/dashboard/models/article.php');
+    public function __construct() {
+        require_once('models/article.php');
     }
 
     public function index() {
-        //require_once()
         // Stores all information in a variable
         $articles = Article::all();
         require_once('views/articles/index.php');
@@ -27,18 +25,15 @@ class ArticleController
     public function show() {
         // An URL is expected of form ?option=article&id=XX
         // without an ID, it redirects to the error page
-        //echo(implode(" ",$_GET));
-        if (!isset($_GET['id'])){
-            /*return */call('error', 'error');
+        if (!isset($_GET['id'])) {
+            call('error', 'error');
         }
-        else{
-            require_once('/opt/lampp/htdocs/dashboard/models/article.php');
+        else {
+            require_once('models/article.php');
 
             $article = Article::find($_GET['id']);
-            require_once('/opt/lampp/htdocs/dashboard/views/articles/show.php');
-        }    
-
-
+            require_once('views/articles/show.php');
+        }
     }
 }
 ?>

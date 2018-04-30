@@ -26,7 +26,7 @@ function call($option, $item) {
     // require the file that matches the controller name
     require_once('controllers/article_controller.php');
 
-    $correcto=true;
+    $correct = true;
     $action = $option;
     // create a new instance of the needed controller
     switch($option) {
@@ -43,14 +43,14 @@ function call($option, $item) {
             $option = new ArticleController();
             break;       
         default:
-            $correcto=false;
+            $correct=false;
             call('error', 'error');  
             break;    
     }
 
     // call the item
     //$option->{ $action }($item);
-    if($correcto)
+    if($correct)
         $option->{ $action }();
     //$option->show();
     //echo($option);

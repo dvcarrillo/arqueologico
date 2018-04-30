@@ -49,7 +49,6 @@ class Article
     public static function all() {
         $list = [];
         $db = ConexionDB::getInstance();
-        //$db->set_charset("utf8");
         $result = $db->query('SELECT * FROM articulos');
 
         foreach($result->fetchAll() as $article) {
@@ -62,7 +61,6 @@ class Article
 
     public static function find($id) {
         $db = ConexionDB::getInstance();
-        //$db->set_charset("utf8");
         // Check that id is integer
         $id = intval($id);
         $result = $db->prepare('SELECT * FROM articulos WHERE id = :id');
