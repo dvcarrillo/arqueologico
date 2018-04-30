@@ -3,3 +3,6 @@
 
 # Ignore macOS folders
 .DS_Store
+
+# Ignore PhpStorm folder
+.idea/
