@@ -25,13 +25,13 @@ class ArticleController
     public function show() {
         // An URL is expected of form ?option=article&id=XX
         // without an ID, it redirects to the error page
-        if (!isset($_GET['id'])) {
+        $articles = Article::all();
+
+        if ((!isset($_GET['item']) || ($_GET['item'] >= count($articles)))) {
             call('error', 'error');
         }
         else {
-            require_once('models/article.php');
-
-            $article = Article::find($_GET['id']);
+            $article = Article::find($_GET['item']);
             require_once('views/articles/show.php');
         }
     }

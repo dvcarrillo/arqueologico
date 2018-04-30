@@ -75,7 +75,7 @@ function showInfoBox(commentNumber, authorName, imageName) {
         element.style.display = "none";
     else {
         document.getElementById("author-info-name").innerHTML = authorName;
-        let imagePath = "img/avatar/" + imageName;
+        let imagePath = "views/img/avatar/" + imageName;
         document.getElementById("author-info-avatar").src = imagePath;
         if (imageName == "avatar.png") 
             document.getElementById("author-info-subtitle").innerHTML = "Usuario invitado";
@@ -112,7 +112,7 @@ function addComment() {
 		var new_comment =
 			'<div class="comment" id="comment-' + num_comments + '">\n' +
 				'<div class="profile-img">\n' + 
-					'<img id="comment-avatar" src="img/avatar/avatar.png" alt="avatar" onclick="showInfoBox(' + num_comments + ', \'' + name + '\', \'avatar.png\');">\n' +
+					'<img id="comment-avatar" src="views/img/avatar/avatar.png" alt="avatar" onclick="showInfoBox(' + num_comments + ', \'' + name + '\', \'avatar.png\');">\n' +
 				'</div>\n' + 
 				'<div class="comment-text">\n' +
 					'<p class="comment-author">#<span id="comment-number">' + num_comments + '</span> <span id="author-name" onclick="showInfoBox(' + num_comments + ', \'' + name + '\', \'avatar.png\');">' + name + '</span><!-- : --></p>\n' +
