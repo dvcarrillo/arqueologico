@@ -9,13 +9,13 @@ Comportamiento de la seccion de comentarios en un articulo
 */
 
 // Numero de comentarios al inicio
-let num_comments = 2;
+let num_comments = 0;
 
 /* Se llama a esta funcion cuando se cargan todos los elementos de la pagina
 */
+
 window.onload = function () {
-    console.log("Ventana cargada, hay " + num_comments + " comentarios!");
-    updateNumComments(num_comments);
+	num_comments = document.getElementById("num-comments").innerText
 };
 
 /* Modifica el numero de comentarios mostrado en el boton

@@ -9,9 +9,11 @@
         <p class="description">
             <?php echo $article->contenido; ?>
         </p>
+        <?php $comment_list = Comment::find($article->id); ?>
+
         <!-- Botones de interaccion -->
-        <button class="article-button" type="button" onclick="showComments();"><span id="num-comments">0</span> comentarios</button>
-        <a href="#"><button class="article-button" type="button">Imprimir artículo</button></a>
+        <button class="article-button" type="button" onclick="showComments();"><span id="num-comments"><?php echo count($comment_list) ?></span> comentarios</button>
+        <a href="?option=print&item=<?php echo $article->id; ?>"><button class="article-button" type="button">Imprimir artículo</button></a>
         <!-- Bloque de comentarios -->
         <div class="comments-block" id="comments-block">
             <h2>Comentarios</h2>
@@ -25,18 +27,18 @@
             <div id="comment-list">
             <!-- Lista de comentarios -->
             <?php
-                $comment_list = Comment::find($article->id);
+               // $comment_list = Comment::find($article->id);
                 $comment_num = 1;
 
                 foreach($comment_list as $comment) { ?>
                     <div class="comment" id="comment-<?php echo $comment_num ?>">
                         <div class="profile-img">
-                            <img id="comment-avatar" src="views/img/avatar/david.jpg" alt="avatar" onclick="showInfoBox(1, 'David Vargas', 'david.jpg');">
+                            <img id="comment-avatar" src=views/img/avatar/<?php echo $comment->imagen; ?>  alt="avatar" onclick="showInfoBox(1, '<?php echo $comment->nombre; ?>', '<?php echo $comment->imagen; ?>');">
                         </div>
                         <div class="comment-text">
-                            <p class="comment-author">#<span id="comment-number">1</span> <span id="author-name" onclick="showInfoBox(1, 'David Vargas', 'david.jpg');">David Vargas</span><!-- : --></p>
-                            <p class="comment-content" id="comment-content">Gran artículo, ¡tendré que ir a verla!</p>
-                            <p class="comment-date">A las 16:45:40 el 21 de marzo de 2018</p>
+                            <p class="comment-author">#<span id="comment-number"><?php echo $comment_num ?></span> <span id="author-name" onclick="showInfoBox(1, '<?php echo $comment->nombre; ?>', '<?php echo $comment->imagen; ?>');"><?php echo $comment->nombre; ?></span><!-- : --></p>
+                            <p class="comment-content" id="comment-content"><?php echo $comment->contenido; ?></p>
+                            <p class="comment-date">A las <?php echo $comment->hora; ?> el dia <?php echo $comment->fecha; ?></p>
                         </div>
 
                     </div>

@@ -23,6 +23,22 @@ class ArticleController
         require_once('views/pages/error.php');
     }
 
+    public function print() {
+        // An URL is expected of form ?option=article&id=XX
+        // without an ID, it redirects to the error page
+        $articles = Article::all();
+        $comments = Comment::all();
+
+        if ((!isset($_GET['item']) || ($_GET['item'] >= count($articles)))) {
+            call('error', 'error');
+        }
+        else {
+            $article = Article::find($_GET['item']);
+            $comment = Comment::find($article->id);
+            require_once('views/articles/show.php');
+        }
+    }
+
     public function show() {
         // An URL is expected of form ?option=article&id=XX
         // without an ID, it redirects to the error page
