@@ -4,7 +4,7 @@
         <p class="date"><?php echo $article->fecha; ?></p>
         <div class="img-container">
             <a href="<?php echo $article->imagenes; ?>"><img src="<?php echo $article->imagenes; ?>" alt=""></a>
-            <p>Patio en La Alhambra</p>
+            <p><?php echo $article->pie_imagen ?></p>
         </div>
         <p class="description">
             <?php echo $article->contenido; ?>
@@ -17,7 +17,7 @@
             <h2>Comentarios</h2>
             <!-- Informacion sobre el autor -->
             <div class="author-info" id="author-box">
-                <img id="author-info-avatar" src="img/avatar/david.jpg" alt="avatar del autor">
+                <img id="author-info-avatar" src="views/img/avatar/david.jpg" alt="avatar del autor">
                 <h3 id="author-info-name">David Vargas</h3>
                 <p id="author-info-subtitle">Usuario registrado</p>
                 <button id="author-info-close" class="close" onclick="showInfoBox();">Cerrar</button>
@@ -26,7 +26,7 @@
             <div id="comment-list">
                 <div class="comment" id="comment-1">
                     <div class="profile-img">
-                        <img id="comment-avatar" src="img/avatar/david.jpg" alt="avatar" onclick="showInfoBox(1, 'David Vargas', 'david.jpg');">
+                        <img id="comment-avatar" src="views/img/avatar/david.jpg" alt="avatar" onclick="showInfoBox(1, 'David Vargas', 'david.jpg');">
                     </div>
                     <div class="comment-text">
                         <p class="comment-author">#<span id="comment-number">1</span> <span id="author-name" onclick="showInfoBox(1, 'David Vargas', 'david.jpg');">David Vargas</span><!-- : --></p>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="comment" id="comment-2">
                     <div class="profile-img">
-                        <img id="comment-avatar" src="img/avatar/sissy.png" alt="avatar" onclick="showInfoBox(2, 'Holly', 'sissy.png');">
+                        <img id="comment-avatar" src="views/img/avatar/sissy.png" alt="avatar" onclick="showInfoBox(2, 'Holly', 'sissy.png');">
                     </div>
                     <div class="comment-text">
                         <p class="comment-author">#<span id="comment-number">2</span> <span id="author-name" onclick="showInfoBox(2, 'Holly', 'sissy.png');">Holly</span><!-- : --></p>
@@ -48,7 +48,7 @@
             </div>
             <!-- Nuevo comentario -->
             <div class="profile-img">
-                <img src="img/avatar/avatar.png" alt="avatar">
+                <img src="views/img/avatar/avatar.png" alt="avatar">
             </div>
             <form class="comment-form">
                 <textarea class="new-comment-text" id="comment-field" name="comment" onkeypress="banWords(event);" onfocusout="censorBeep();" placeholder="Introduce tu comentario..."></textarea>

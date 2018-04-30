@@ -8,13 +8,13 @@
         <!-- Estilos -->
         <link rel="stylesheet" type="text/css" media="screen" href="views/css/main.css">
         <link rel="stylesheet" type="text/css" media="screen" href="views/css/article.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="views/css/print.css">
+<!--        <link rel="stylesheet" type="text/css" media="screen" href="views/css/print.css">-->
 
         <!-- Tipografias -->
         <link href="https://fonts.googleapis.com/css?family=Lora|Playfair+Display|Roboto" rel="stylesheet">
 
         <!-- Scripts -->
-        <script src="scripts/comments.js"></script>
+        <script src="views/scripts/comments.js"></script>
 
         <title>Ahora | Arqueológico Granada</title>
     </head>
@@ -23,7 +23,10 @@
             <h1 class="brand-name"><a href="?option=index&item=1&id=1">Arqueológico.</a></h1>
             <nav class="navbar">
                 <ul>
-                    <li><a href="#" class="active">EXPLORA</a></li>
+                    <li><a href="#" class="<?php
+                        if ($_GET['option'] === 'index')
+                            echo ("active");
+                    ?>">EXPLORA</a></li>
                     <li><a href="alhambra.html">EXPOSICIONES</a></li>
                     <li><a href="#">TIENDA</a></li>
                 </ul>
@@ -33,7 +36,10 @@
 
         <div class="sidebar">
             <ul>
-                <li><a href="" class="active">AHORA</a></li>
+                <li><a href="" class="<?php
+                    if ($_GET['option'] === 'index')
+                        echo ("active");
+                    ?>">AHORA</a></li>
                 <li><a href="#">EVENTOS</a></li>
                 <li><a href="#">EL MUSEO</a></li>
                 <li><a href="#">PRÓXIMAMENTE</a></li>
