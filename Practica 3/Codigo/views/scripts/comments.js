@@ -132,7 +132,7 @@ function addComment() {
 	}
 }
 
-/** Censura las palabras prohibidas 
+/** Censura las palabras prohibidas
 */
 function censorBeep(){
 	var comment = document.getElementById("comment-field").value;

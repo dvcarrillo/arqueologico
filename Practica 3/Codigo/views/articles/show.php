@@ -22,29 +22,26 @@
                 <p id="author-info-subtitle">Usuario registrado</p>
                 <button id="author-info-close" class="close" onclick="showInfoBox();">Cerrar</button>
             </div>
-            <!-- Lista de comentarios -->
             <div id="comment-list">
-                <div class="comment" id="comment-1">
-                    <div class="profile-img">
-                        <img id="comment-avatar" src="views/img/avatar/david.jpg" alt="avatar" onclick="showInfoBox(1, 'David Vargas', 'david.jpg');">
-                    </div>
-                    <div class="comment-text">
-                        <p class="comment-author">#<span id="comment-number">1</span> <span id="author-name" onclick="showInfoBox(1, 'David Vargas', 'david.jpg');">David Vargas</span><!-- : --></p>
-                        <p class="comment-content" id="comment-content">Gran artículo, ¡tendré que ir a verla!</p>
-                        <p class="comment-date">A las 16:45:40 el 21 de marzo de 2018</p>
-                    </div>
+            <!-- Lista de comentarios -->
+            <?php
+                $comment_list = Comment::find($article->id);
+                $comment_num = 1;
 
-                </div>
-                <div class="comment" id="comment-2">
-                    <div class="profile-img">
-                        <img id="comment-avatar" src="views/img/avatar/sissy.png" alt="avatar" onclick="showInfoBox(2, 'Holly', 'sissy.png');">
+                foreach($comment_list as $comment) { ?>
+                    <div class="comment" id="comment-<?php echo $comment_num ?>">
+                        <div class="profile-img">
+                            <img id="comment-avatar" src="views/img/avatar/david.jpg" alt="avatar" onclick="showInfoBox(1, 'David Vargas', 'david.jpg');">
+                        </div>
+                        <div class="comment-text">
+                            <p class="comment-author">#<span id="comment-number">1</span> <span id="author-name" onclick="showInfoBox(1, 'David Vargas', 'david.jpg');">David Vargas</span><!-- : --></p>
+                            <p class="comment-content" id="comment-content">Gran artículo, ¡tendré que ir a verla!</p>
+                            <p class="comment-date">A las 16:45:40 el 21 de marzo de 2018</p>
+                        </div>
+
                     </div>
-                    <div class="comment-text">
-                        <p class="comment-author">#<span id="comment-number">2</span> <span id="author-name" onclick="showInfoBox(2, 'Holly', 'sissy.png');">Holly</span><!-- : --></p>
-                        <p class="comment-content" id="comment-content">Love the Alhambra, looking forward to my trip to Granada on July!</p>
-                        <p class="comment-date">A las 21:10:44 el 21 de marzo de 2018</p>
-                    </div>
-                </div>
+            <?php $comment_num += 1;
+                } ?>
             </div>
             <!-- Nuevo comentario -->
             <div class="profile-img">
