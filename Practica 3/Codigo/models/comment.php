@@ -14,18 +14,18 @@
 class Comment
 {
     // Atributos del comentario
-    private $id_comentario;
-    private $nombre;
-    private $fecha;
-    private $hora;
-    private $contenido;
-    private $email;
-    private $imagen;
-    private $id_articulo;
+    public $id_comentario;
+    public $nombre;
+    public $fecha;
+    public $hora;
+    public $contenido;
+    public $email;
+    public $imagen;
+    public $id_articulo;
 
     /**
      * Comment constructor.
-     * @param $id_comentario
+     * @param $id
      * @param $nombre
      * @param $fecha
      * @param $hora
@@ -34,9 +34,9 @@ class Comment
      * @param $imagen
      * @param $id_articulo
      */
-    public function __construct($id_comentario, $nombre, $fecha, $hora, $contenido, $email, $imagen, $id_articulo)
+    public function __construct($id, $nombre, $fecha, $hora, $contenido, $email, $imagen, $id_articulo)
     {
-        $this->id_comentario = $id_comentario;
+        $this->id_comentario = $id;
         $this->nombre = $nombre;
         $this->fecha = $fecha;
         $this->hora = $hora;
@@ -183,7 +183,7 @@ class Comment
 
         foreach($result->fetchAll() as $comment) {
             $list[] = new Comment($comment['id'], $comment['nombre'], $comment['fecha'], $comment['hora'],
-                $comment['contenido'], $comment['email'], $comment['imagen'], $comment['articulo']);
+                $comment['contenido'], $comment['email'], $comment['imagen'], $comment['id_articulo']);
         }
 
         return $list;
@@ -192,25 +192,14 @@ class Comment
     public static function find($article) {
         $db = ConexionDB::getInstance();
         $list = [];
-        // Check that id is integer
-        $article = intval($article);
-        $result = $db->prepare('SELECT * FROM comentarios WHERE article = :article');
-
+        $result = $db->query('SELECT * FROM comentarios WHERE id_articulo = ' . $article);
 
         foreach($result->fetchAll() as $comment) {
             $list[] = new Comment($comment['id'], $comment['nombre'], $comment['fecha'], $comment['hora'],
-                $comment['contenido'], $comment['email'], $comment['imagen'], $comment['articulo']);
+                $comment['contenido'], $comment['email'], $comment['imagen'], $comment['id_articulo']);
         }
 
         return $list;
-
-
-       /* $result->execute(array('article' => $article));
-        $comment = $result->fetch();
-
-        return new new Comment($comment['id'], $comment['nombre'], $comment['fecha'], $comment['hora'],
-        $comment['contenido'], $comment['email'], $comment['imagen'], $comment['articulo']);
-    }*/
-}
+    }
 
 }
