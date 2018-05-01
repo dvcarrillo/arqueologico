@@ -113,6 +113,11 @@ footer {
     display: none;
 }
 
+/* Photo gallery */
+.photo-gallery {
+    display: none;
+}
+
 /* Comments view */
 .comments-block {
     display: none;
