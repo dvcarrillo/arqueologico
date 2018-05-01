@@ -42,7 +42,7 @@ class Article
         $this->fecha = $fecha;
         $this->contenido = $contenido;
         $this->imagen_principal = $imagen_principal;
-        $this->imagenes = $imagenes;
+        $this->imagenes = explode(" ", $imagenes);
         $this->pie_imagen = $pie_imagen;
     }
 

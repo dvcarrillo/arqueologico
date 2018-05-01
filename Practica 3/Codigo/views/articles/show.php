@@ -2,17 +2,37 @@
     <div class="article">
         <h1><?php echo $article->titulo; ?></h1>
         <p class="date"><?php echo $article->fecha; ?></p>
+
         <div class="img-container">
-            <a href="<?php echo $article->imagenes; ?>"><img src="<?php echo $article->imagenes; ?>" alt=""></a>
+            <a href="<?php echo $article->imagenes; ?>"><img src="views/img/<?php echo $article->imagenes[0]; ?>" alt=""></a>
             <p><?php echo $article->pie_imagen ?></p>
         </div>
+
         <p class="description">
             <?php echo $article->contenido; ?>
         </p>
-        <?php $comment_list = Comment::find($article->id); ?>
+
+        <?php if (count($article->imagenes) > 1) { ?>
+            <div class="photo-gallery">
+                <?php
+                $i = 0;
+                do { ?>
+                    <div>
+                        <ul class="box2">
+                            <?php for ($j = $i; $j < $i + 3; $j++) { ?>
+                                <li><img src=views/img/galleries/<?php echo $article->imagenes[$j + 1]?>></li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                <?php
+                $i = $i + 3;
+                } while($i < (count($article->imagenes) - 1))  ?>
+            </div>
+        <?php } ?>
 
         <!-- Botones de interaccion -->
-        <button class="article-button" type="button" onclick="showComments();"><span id="num-comments"><?php echo count($comment_list) ?></span> comentarios</button>
+        <?php $comment_list = Comment::find($article->id); ?>
+        <button class="article-button" type="button" onclick="showComments();"><span id="num-comments"><?php if (count($comment_list) > 0) echo count($comment_list); else echo "Sin" ?></span> comentarios</button>
         <a href="?option=print&item=<?php echo $article->id; ?>"><button class="article-button" type="button">Imprimir artículo</button></a>
         <!-- Bloque de comentarios -->
         <div class="comments-block" id="comments-block">
@@ -27,9 +47,7 @@
             <div id="comment-list">
             <!-- Lista de comentarios -->
             <?php
-               // $comment_list = Comment::find($article->id);
                 $comment_num = 1;
-
                 foreach($comment_list as $comment) { ?>
                     <div class="comment" id="comment-<?php echo $comment_num ?>">
                         <div class="profile-img">

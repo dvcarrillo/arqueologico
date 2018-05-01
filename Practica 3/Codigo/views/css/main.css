@@ -19,6 +19,7 @@ Estilos de página genéricos
     font-family: 'Playfair Display', serif;
     font-size: 250%;
     font-weight: lighter;
+    margin-top: 25px;
 }
 
 .brand-name a {
@@ -150,7 +151,6 @@ Estilos de página genéricos
 }
 
 #img-strip {
-    margin-top: -5px;
     border-top: solid 5px #ffff33;
 }
 

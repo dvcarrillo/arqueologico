@@ -26,13 +26,9 @@ function call($option, $item) {
     // require the file that matches the controller name
     require_once('controllers/article_controller.php');
 
-    $correct = true;
     $action = $option;
     // create a new instance of the needed controller
     switch($option) {
-       /* case 'pages':
-            $option = new ArticleController();
-            break;*/
         case 'show':
             $option = new ArticleController();
             break;   
@@ -44,24 +40,17 @@ function call($option, $item) {
             break;   
         case 'error':
             $option = new ArticleController();
-            break;       
-        default:
-            $correct=false;
-            call('error', 'error');  
-            break;    
+            break;
     }
 
-    // call the item
-    //$option->{ $action }($item);
-    if($correct)
-        $option->{ $action }();
-    //$option->show();
-    //echo($option);
+    $option->{ $action }();
 }
+
+$pagelist = ['index' , 'show', 'print'];
 
 // check that the requested controller and action are both allowed
 // if someone tries to access something else he will be redirected to the error action of the pages controller
-if (is_numeric($item)) {
+if (in_array($option, $pagelist) && is_numeric($item)) {
     call($option, $item);
 } else {
     call('error', 'error');
