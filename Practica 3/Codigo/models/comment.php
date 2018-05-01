@@ -8,7 +8,7 @@
 
 /**
  * Class Comment
- * Representa un comentario parte de un articulo
+ * Representa un comentario, parte de un articulo
  */
 
 class Comment

@@ -6,11 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Estilos -->
-        <?php if($option!='print'){ 
-                    echo ("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"views/css/main.css\">") ;
-                    echo ("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"views/css/article.css\">");
+        <?php if($option == 'index'){
+            echo ("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"views/css/main.css\">") ;
         }
-        else{
+        else if ($option == 'show' && is_numeric($item)) {
+            echo ("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"views/css/main.css\">") ;
+            echo ("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"views/css/article.css\">");
+        }
+        else {
             echo ("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"views/css/print.css\">");
         }?>
 
@@ -28,11 +31,14 @@
             <h1 class="brand-name"><a href="?option=index" style="text-decoration:none; color:black;">Arqueológico.</a></h1>
             <nav class="navbar">
                 <ul>
-                    <li><a href="#" class="<?php
-                        if ($_GET['option'] === 'index')
+                    <li><a href="?option=index" class="<?php
+                        if ($option == "index")
                             echo ("active");
                     ?>">EXPLORA</a></li>
-                    <li><a href="#">EXPOSICIONES</a></li>
+                    <li><a href="?option=show&item=0"  class="<?php
+                        if ($option == "show")
+                            echo ("active");
+                    ?>">EXPOSICIONES</a></li>
                     <li><a href="#">TIENDA</a></li>
                 </ul>
             </nav>
@@ -41,8 +47,8 @@
 
         <div class="sidebar">
             <ul>
-                <li><a href="" class="<?php
-                    if ($_GET['option'] === 'index')
+                <li><a href="?option=index" class="<?php
+                    if ($option == 'index')
                         echo ("active");
                     ?>">AHORA</a></li>
                 <li><a href="#">EVENTOS</a></li>

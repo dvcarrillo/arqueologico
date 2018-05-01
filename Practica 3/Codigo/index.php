@@ -19,7 +19,7 @@ Archivo principal de la pagina que enlaza con el resto
         $item = $_GET['item'];
     }
     else {
-        $option = 'index';
+        $option = "index";
         $item = 0;
     }
 
