@@ -6,9 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Estilos -->
-        <link rel="stylesheet" type="text/css" media="screen" href="views/css/main.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="views/css/article.css">
-<!--        <link rel="stylesheet" type="text/css" media="screen" href="views/css/print.css">-->
+        <?php if($option!='print'){ 
+                    echo ("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"views/css/main.css\">") ;
+                    echo ("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"views/css/article.css\">");
+        }
+        else{
+            echo ("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"views/css/print.css\">");
+        }?>
 
         <!-- Tipografias -->
         <link href="https://fonts.googleapis.com/css?family=Lora|Playfair+Display|Roboto" rel="stylesheet">
@@ -20,14 +24,15 @@
     </head>
     <body>
         <header>
-            <h1 class="brand-name"><a href="?option=index&item=1&id=1">Arqueológico.</a></h1>
+
+            <h1 class="brand-name"><a href="?option=index" style="text-decoration:none; color:black;">Arqueológico.</a></h1>
             <nav class="navbar">
                 <ul>
                     <li><a href="#" class="<?php
                         if ($_GET['option'] === 'index')
                             echo ("active");
                     ?>">EXPLORA</a></li>
-                    <li><a href="alhambra.html">EXPOSICIONES</a></li>
+                    <li><a href="#">EXPOSICIONES</a></li>
                     <li><a href="#">TIENDA</a></li>
                 </ul>
             </nav>

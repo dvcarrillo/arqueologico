@@ -36,6 +36,9 @@ function call($option, $item) {
         case 'show':
             $option = new ArticleController();
             break;   
+        case 'print':
+            $option = new ArticleController();
+            break;      
         case 'index':
             $option = new ArticleController();
             break;   
