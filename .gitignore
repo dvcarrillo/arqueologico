@@ -1,8 +1,9 @@
 # Ignore PDF files
 *.pdf
 
-# Ignore macOS folders
+# Ignore macOS & Dolphin folders
 .DS_Store
+.directory
 
 # Ignore PhpStorm folder
 .idea
