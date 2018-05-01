@@ -4,27 +4,26 @@ Arturo Cortés Sánchez
 Sistemas de Información Basados en Web
 Curso 2017 - 2018
 
-Práctica 2
+Práctica 3
 Comportamiento de la seccion de comentarios en un articulo
 */
 
 // Numero de comentarios al inicio
 let num_comments = 0;
 
-/* Se llama a esta funcion cuando se cargan todos los elementos de la pagina
+/** Se llama a esta funcion cuando se cargan todos los elementos de la pagina
 */
-
 window.onload = function () {
 	num_comments = document.getElementById("num-comments").innerText
 };
 
-/* Modifica el numero de comentarios mostrado en el boton
+/** Modifica el numero de comentarios mostrado en el boton
 */
 function updateNumComments(num) {
     document.getElementById("num-comments").innerText = num_comments;
 }
 
-/* Muestra u oculta la seccion de comentarios
+/** Muestra u oculta la seccion de comentarios
 */
 function showComments() {
     var element = document.getElementById("comments-block");
