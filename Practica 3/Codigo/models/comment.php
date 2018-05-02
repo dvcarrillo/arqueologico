@@ -16,7 +16,9 @@ class Comment
     // Atributos del comentario
     public $id_comentario;
     public $nombre;
-    public $fecha;
+    public $year;
+    public $month;
+    public $day;
     public $hora;
     public $contenido;
     public $email;
@@ -38,141 +40,14 @@ class Comment
     {
         $this->id_comentario = $id;
         $this->nombre = $nombre;
-        $this->fecha = $fecha;
+        $fecha = explode("-", $fecha);
+        $this->year = $fecha[0];
+        $this->month = $fecha[1];
+        $this->day = $fecha[2];
         $this->hora = $hora;
         $this->contenido = $contenido;
         $this->email = $email;
         $this->imagen = $imagen;
-        $this->id_articulo = $id_articulo;
-    }
-
-    /**** GET AND SET METHODS ****/
-
-    /**
-     * @return mixed
-     */
-    public function getIdComentario()
-    {
-        return $this->id_comentario;
-    }
-
-    /**
-     * @param mixed $id_comentario
-     */
-    public function setIdComentario($id_comentario)
-    {
-        $this->id_comentario = $id_comentario;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getNombre()
-    {
-        return $this->nombre;
-    }
-
-    /**
-     * @param mixed $nombre
-     */
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFecha()
-    {
-        return $this->fecha;
-    }
-
-    /**
-     * @param mixed $fecha
-     */
-    public function setFecha($fecha)
-    {
-        $this->fecha = $fecha;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getHora()
-    {
-        return $this->hora;
-    }
-
-    /**
-     * @param mixed $hora
-     */
-    public function setHora($hora)
-    {
-        $this->hora = $hora;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getContenido()
-    {
-        return $this->contenido;
-    }
-
-    /**
-     * @param mixed $contenido
-     */
-    public function setContenido($contenido)
-    {
-        $this->contenido = $contenido;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param mixed $email
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getImagen()
-    {
-        return $this->imagen;
-    }
-
-    /**
-     * @param mixed $imagen
-     */
-    public function setImagen($imagen)
-    {
-        $this->imagen = $imagen;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIdArticulo()
-    {
-        return $this->id_articulo;
-    }
-
-    /**
-     * @param mixed $id_articulo
-     */
-    public function setIdArticulo($id_articulo)
-    {
         $this->id_articulo = $id_articulo;
     }
 
@@ -202,4 +77,11 @@ class Comment
         return $list;
     }
 
+    // Obtiene la fecha en un formato mas legible
+    public function getDate() {
+        $MONTH_NAMES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre",
+            "octubre", "noviembre", "diciembre"];
+        $dateString = $this->day . " de " . $MONTH_NAMES[$this->month - 1] . " de " . $this->year;
+        return $dateString;
+    }
 }

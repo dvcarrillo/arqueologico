@@ -1,7 +1,7 @@
 <div class="main">
     <div class="article">
         <h1><?php echo $article->titulo; ?></h1>
-        <p class="date"><?php echo $article->fecha; ?></p>
+        <p class="date"><?php echo($article->day . "/" . $article->month . "/" . $article->year); ?></p>
 
         <div class="img-container">
             <a href="views/img/<?php echo $article->imagenes[0]; ?>"><img src="views/img/<?php echo $article->imagenes[0]; ?>" alt=""></a>
@@ -65,7 +65,7 @@
                         <div class="comment-text">
                             <p class="comment-author">#<span id="comment-number"><?php echo $comment_num ?></span> <span id="author-name" onclick="showInfoBox(1, '<?php echo $comment->nombre; ?>', '<?php echo $comment->imagen; ?>');"><?php echo $comment->nombre; ?></span><!-- : --></p>
                             <p class="comment-content" id="comment-content"><?php echo $comment->contenido; ?></p>
-                            <p class="comment-date">A las <?php echo $comment->hora; ?> el dia <?php echo $comment->fecha; ?></p>
+                            <p class="comment-date">A las <?php echo $comment->hora; ?> el <?php echo $comment->getDate(); ?></p>
                         </div>
 
                     </div>

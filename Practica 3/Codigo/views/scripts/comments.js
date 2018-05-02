@@ -15,17 +15,21 @@ let num_comments = 2;
 */
 window.onload = function () {
     console.log("Ventana cargada, hay " + num_comments + " comentarios!");
-    updateNumComments(num_comments);
+    num_comments = document.getElementById("num-comments").innerText;
+
+    if (num_comments === "Sin") {
+        num_comments = 0;
+    }
 };
 
 /* Modifica el numero de comentarios mostrado en el boton
 */
-function updateNumComments(num) {
+function updateNumComments() {
     document.getElementById("num-comments").innerText = num_comments;
 }
 
-/** Muestra u oculta la seccion de comentarios
- */
+/* Muestra u oculta la seccion de comentarios
+*/
 function showComments() {
     var element = document.getElementById("comments-block");
 
@@ -33,38 +37,6 @@ function showComments() {
         element.style.display = "none";
     else
         element.style.display = "block";
-}
-
-/** Muestra u oculta la seccion de comparticion
- */
-function showShare() {
-    var element = document.getElementById("share-block");
-
-    if (element.style.display == "block")
-        element.style.display = "none";
-    else
-        element.style.display = "block";
-}
-
-/** Acciones para compartir en las redes sociales
- */
-function twitterShare() {
-	let message = prompt("Se publicará en Twitter el siguiente mensaje:");
-	if (message !== "") {
-		alert("Tweet publicado:\n\n" + message + "\nhttps://www.arqueologicogranada.es");
-	}
-	else {
-		alert("Su tweet no se ha publicado porque no ha introducido texto");
-	}
-}
-function facebookShare() {
-    let message = prompt("Se publicará en Facebook el siguiente mensaje:");
-    if (message !== "") {
-        alert("Publicación creada:\n\n" + message + "\nhttps://www.arqueologicogranada.es");
-    }
-    else {
-        alert("Su publicación no se ha creado porque no ha introducido texto");
-    }
 }
 
 /** Comprueba que el email es correcto

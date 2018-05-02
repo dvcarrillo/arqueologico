@@ -17,7 +17,9 @@ class Article
     public $id;
     public $titulo;
     public $subtitulo;
-    public $fecha;
+    public $year;
+    public $month;
+    public $day;
     public $contenido;
     public $imagen_principal;
     public $imagenes;
@@ -39,7 +41,10 @@ class Article
         $this->id = $id;
         $this->titulo = $titulo;
         $this->subtitulo = $subtitulo;
-        $this->fecha = $fecha;
+        $fecha = explode("-", $fecha);
+        $this->year = $fecha[0];
+        $this->month = $fecha[1];
+        $this->day = $fecha[2];
         $this->contenido = $contenido;
         $this->imagen_principal = $imagen_principal;
         $this->imagenes = explode(" ", $imagenes);
