@@ -100,11 +100,11 @@ footer {
     font-family: 'Roboto', sans-serif;
     padding: 15px;
     margin-top: 30px;
+    margin-right: 10px;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     display: none;
-    
 }
 
 .article-button:hover {
@@ -120,7 +120,6 @@ footer {
 
 /* Comments view */
 .comments-block {
-    display: none;
     position: relative;
     font-family: 'Roboto', sans-serif;
     margin-top: 40px;

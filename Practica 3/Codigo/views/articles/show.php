@@ -4,7 +4,7 @@
         <p class="date"><?php echo $article->fecha; ?></p>
 
         <div class="img-container">
-            <a href="<?php echo $article->imagenes; ?>"><img src="views/img/<?php echo $article->imagenes[0]; ?>" alt=""></a>
+            <a href="views/img/<?php echo $article->imagenes[0]; ?>"><img src="views/img/<?php echo $article->imagenes[0]; ?>" alt=""></a>
             <p><?php echo $article->pie_imagen ?></p>
         </div>
 
@@ -33,7 +33,16 @@
         <!-- Botones de interaccion -->
         <?php $comment_list = Comment::find($article->id); ?>
         <button class="article-button" type="button" onclick="showComments();"><span id="num-comments"><?php if (count($comment_list) > 0) echo count($comment_list); else echo "Sin" ?></span> comentarios</button>
-        <a href="?option=print&item=<?php echo $article->id; ?>"><button class="article-button" type="button">Imprimir artículo</button></a>
+        <button class="article-button" type="button" onclick="showShare();">Compartir</button>
+        <a href="?option=print&item=<?php echo $article->id; ?>"><button class="article-button" type="button">Imprimir</button></a>
+
+        <!-- Bloque de comparticion -->
+        <div class="comments-block" id="share-block">
+            <h2>Compartir vía</h2>
+            <button class="article-button" type="button" style="background-color: #3b5998; color: white; border: 1px solid #3b5998; margin-top: 5px;" onclick="facebookShare();"><i class="fab fa-facebook-f" style="margin-right: 5px;"></i>  Facebook</button>
+            <button class="article-button" type="button" style="background-color: #00aced; color: white; border: 1px solid #00aced; margin-top: 5px;" onclick="twitterShare();"><i class="fab fa-twitter" style="margin-right: 5px;"></i>  Twitter</button>
+        </div>
+
         <!-- Bloque de comentarios -->
         <div class="comments-block" id="comments-block">
             <h2>Comentarios</h2>
