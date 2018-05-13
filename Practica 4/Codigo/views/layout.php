@@ -46,10 +46,11 @@
                         if ($option == "show")
                             echo ("active");
                     ?>">EXPOSICIONES</a></li>
+                    <li><a href="#">TIENDA</a></li>
                     <li><a href="?option=login" class="<?php
                         if ($option == "login")
                             echo ("active");
-                    ?>">TU CUENTA</a></li>
+                    ?>">ENTRAR</a></li>
                 </ul>
             </nav>
             <div id="nav-strip"/>
