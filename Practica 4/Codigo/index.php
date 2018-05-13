@@ -14,9 +14,13 @@ Archivo principal de la pagina que enlaza con el resto
     require_once('db/db.php');
 
     // GET petition check
-    if (isset($_GET['option']) && isset($_GET['item'])) {
+    if (isset($_GET['option'])) {
         $option = $_GET['option'];
-        $item = $_GET['item'];
+
+        if (isset($_GET['item']))
+            $item = $_GET['item'];
+        else
+            $item = 0;
     }
     else {
         $option = "index";

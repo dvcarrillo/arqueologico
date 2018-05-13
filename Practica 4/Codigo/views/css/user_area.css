@@ -1,0 +1,30 @@
+/*
+David Vargas Carrillo
+Arturo Cortés Sánchez
+Sistemas de Información Basados en Web
+Curso 2017 - 2018
+
+Práctica 4
+Estilos para la vista de la area de usuario
+*/
+
+/* Cuerpo central */
+.form-title-box {
+    padding-left: 10px;
+    width: 90%;
+}
+
+.form-title-box h1 {
+    font-family: 'Lora', serif;
+    font-weight: normal;
+}
+
+.form-title-box p {
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+}
+
+.login {
+    width: 70%;
+    margin-top: 20px;
+}

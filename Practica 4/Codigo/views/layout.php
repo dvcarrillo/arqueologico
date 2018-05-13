@@ -13,6 +13,10 @@
             echo ("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"views/css/main.css\">") ;
             echo ("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"views/css/article.css\">");
         }
+        else if ($option == 'login') {
+            echo ("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"views/css/main.css\">") ;
+            echo ("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"views/css/user_area.css\">") ;
+        }
         else {
             echo ("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"views/css/print.css\">");
         }?>
@@ -26,7 +30,7 @@
         <!-- Scripts -->
         <script src="views/scripts/comments.js"></script>
 
-        <title>Ahora | Arqueológico Granada</title>
+        <title>Arqueológico Granada</title>
     </head>
     <body>
         <header>
@@ -38,11 +42,14 @@
                         if ($option == "index")
                             echo ("active");
                     ?>">EXPLORA</a></li>
-                    <li><a href="?option=show&item=0"  class="<?php
+                    <li><a href="?option=show&item=0" class="<?php
                         if ($option == "show")
                             echo ("active");
                     ?>">EXPOSICIONES</a></li>
-                    <li><a href="#">TIENDA</a></li>
+                    <li><a href="?option=login" class="<?php
+                        if ($option == "login")
+                            echo ("active");
+                    ?>">TU CUENTA</a></li>
                 </ul>
             </nav>
             <div id="nav-strip"/>
@@ -50,15 +57,26 @@
 
         <div class="sidebar">
             <ul>
-                <li><a href="?option=index" class="<?php
-                    if ($option == 'index')
-                        echo ("active");
-                    ?>">AHORA</a></li>
-                <li><a href="#">EVENTOS</a></li>
-                <li><a href="#">EL MUSEO</a></li>
-                <li><a href="#">PRÓXIMAMENTE</a></li>
-                <li><a href="#">PLANEA TU VISITA</a></li>
-                <li><a href="#">HORARIOS Y TICKETS</a></li>
+                <?php if($option != 'login') { ?>
+                    <li><a href="?option=index" class="<?php
+                        if ($option == 'index')
+                            echo ("active");
+                        ?>">AHORA</a></li>
+                    <li><a href="#">EVENTOS</a></li>
+                    <li><a href="#">EL MUSEO</a></li>
+                    <li><a href="#">PRÓXIMAMENTE</a></li>
+                    <li><a href="#">PLANEA TU VISITA</a></li>
+                    <li><a href="#">HORARIOS Y TICKETS</a></li>
+                <?php } else { ?>
+                    <li><a href="?option=login&item=0" class="<?php
+                        if ($item == '0')
+                            echo ("active");
+                        ?>">USUARIO REGISTRADO</a></li>
+                    <li><a href="?option=login&item=1" class="<?php
+                        if ($item == '1')
+                            echo ("active");
+                        ?>">CREA TU CUENTA</a></li>
+                <?php } ?>
             </ul>
         </div>
 
