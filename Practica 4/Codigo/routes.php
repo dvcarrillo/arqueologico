@@ -26,10 +26,10 @@ function call($option, $item) {
     // create a new instance of the needed controller
     switch($option) {
         case 'login':
-            require_once ('controllers/login_controller.php');
-            $option = new LoginController();
-            $option->setItemLoginForm($item);
-            $action = 'showLoginForm';
+            require_once('controllers/user_area_controller.php');
+            $option = new UserAreaController();
+            $option->setView($item);
+            $action = 'show';
             break;
         case 'show':
             require_once('controllers/article_controller.php');
@@ -60,14 +60,15 @@ $pagelist = ['index' , 'show', 'print', 'login'];
 // Check that the requested controller and action are both allowed
 // If someone tries to access something else he will be redirected to the error action of the pages controller
 if (in_array($option, $pagelist)) {
-    if (($option == 'show') || ($option == 'login')) {
+    if (($option == 'show')) {
         if (is_numeric($item))
             call($option, $item);
         else
             call('error', 'error');
     }
-    else
+    else {
         call($option, $item);
+    }
 } else {
     call('error', 'error');
 }

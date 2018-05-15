@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: dvcarrillo
- * Date: 13/5/18
- * Time: 21:01
+ * Date: 15/5/18
+ * Time: 22:38
  */
 ?>
 
@@ -13,15 +13,15 @@
     </div>
 
     <div class="form-title-box">
-        <h1>Entrar como usuario registrado</h1>
+        <h1>Creación de una nueva cuenta</h1>
         <p>
-            Los usuarios registrados disfrutan de ventajas adicionales, como poder especificar sus datos de
-            usuario y comentar de una forma más personal los artículos. Introduce a continuación tus datos de usuario, o
-            bien crea una nueva cuenta.
+            Como usuario no registrado, no puedes comentar en los artículos ni preservar unos datos de usuario.
+            Por ello, te animamos a registrarte en Arqueológico, es un proceso totalmente gratuito y que sólo lleva
+            unos minutos.
         </p>
     </div>
 
-    <div class="login-box">
+    <div class="reg-box">
         <form action="index.php?option=login&item=userarea" method="post">
             <div class="img-container">
                 <img src="views/img/avatar/avatar.png" alt="avatar de usuario"/>
