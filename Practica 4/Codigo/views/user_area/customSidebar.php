@@ -10,7 +10,7 @@ if(($item == 'login') || ($item == 'registration')) { ?>
     <li><a href="?option=login&item=login" class="<?php
         if ($item == 'login')
             echo ("active");
-        ?>">USUARIO REGISTRADO</a></li>
+        ?>">USUARIO EXISTENTE</a></li>
     <li><a href="?option=login&item=registration" class="<?php
         if ($item == 'registration')
             echo ("active");
