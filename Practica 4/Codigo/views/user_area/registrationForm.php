@@ -22,22 +22,29 @@
     </div>
 
     <div class="reg-box">
-        <form action="index.php?option=login&item=userarea" method="post">
+        <form action="index.php?option=login&item=registeruser" method="post">
             <div class="img-container">
                 <img src="views/img/avatar/avatar.png" alt="avatar de usuario"/>
             </div>
 
             <div class="container">
-                <label for="username">Correo electrónico</label>
-                <input type="text" placeholder="Escribe tu correo electrónico" name="email" required>
+                <label for="name">Nombre</label>
+                <input type="text" placeholder="Escribe tu nombre" name="name" required>
+
+                <label for="surname">Apellidos</label>
+                <input type="text" placeholder="Escribe tus apellidos" name="surname" required>
+                <br>
+
+                <label for="email">Correo electrónico</label>
+                <input type="email" placeholder="Escribe tu correo electrónico" name="email" required>
 
                 <label for="password">Contraseña</label>
                 <input type="password" placeholder="Escribe tu contraseña" name="password" required>
 
-                <button type="submit">Entrar</button>
-                <label>
-                    <input type="checkbox" checked="checked" name="remember"> Mantener la sesión iniciada
-                </label>
+                <label for="confirm-password">Confirma tu contraseña</label>
+                <input type="password" placeholder="Escribe de nuevo tu contraseña" name="confirm-password" required>
+
+                <button type="submit">Crear cuenta</button>
             </div>
         </form>
     </div>
