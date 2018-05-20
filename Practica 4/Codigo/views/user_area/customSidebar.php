@@ -17,5 +17,5 @@ if(($item == 'login') || ($item == 'registration')) { ?>
         ?>">CREA TU CUENTA</a></li>
 <?php } else if ($item == 'userarea') { ?>
     <li><a href="#">MODIFICA TUS DATOS</a></li>
-    <li><a href="#">CERRAR SESIÓN</a></li>
+    <li><a href="?option=login&item=login&action=close">CERRAR SESIÓN</a></li>
 <?php } ?>

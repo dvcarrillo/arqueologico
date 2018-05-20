@@ -47,10 +47,20 @@
                             echo ("active");
                     ?>">EXPOSICIONES</a></li>
                     <li><a href="#">TIENDA</a></li>
-                    <li><a href="?option=login&item=login" class="<?php
+                    <li><a href="<?php
+                        if(isset($_SESSION['user_name']))
+                            echo("?option=login&item=userarea");
+                        else
+                            echo("?option=login&item=login");
+                    ?>" class="<?php
                         if ($option == "login")
                             echo ("active");
-                    ?>">ENTRAR</a></li>
+                    ?>"><?php
+                        if(isset($_SESSION['user_name']))
+                            echo(strtoupper($_SESSION['user_name']));
+                        else
+                            echo("ENTRAR");
+                    ?></a></li>
                 </ul>
             </nav>
             <div id="nav-strip"/>
