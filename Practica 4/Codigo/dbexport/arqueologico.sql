@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 01-05-2018 a las 01:48:31
+-- Tiempo de generación: 20-05-2018 a las 22:27:03
 -- Versión del servidor: 10.1.26-MariaDB
 -- Versión de PHP: 7.1.9
 
@@ -75,6 +75,52 @@ INSERT INTO `comentarios` (`id`, `nombre`, `fecha`, `hora`, `contenido`, `email`
 (1, 'David Vargas', '2018-03-21', '16:45:40', 'Gran articulo, tendre que ir a verla', 'dvcarrillo@correo.ugr.es', 'david.jpg', 0),
 (2, 'Holly', '2018-03-21', '21:10:44', 'Love the Alhambra, looking forward to my trip to Granada on July!', 'hollyfrombadlands@aol.com', 'sissy.png', 0);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tipo_usuario`
+--
+
+CREATE TABLE `tipo_usuario` (
+  `id` int(11) NOT NULL,
+  `nombre` text COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `tipo_usuario`
+--
+
+INSERT INTO `tipo_usuario` (`id`, `nombre`) VALUES
+(0, 'anonimo'),
+(1, 'registrado'),
+(2, 'moderador'),
+(3, 'gestor'),
+(4, 'superusuario');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nombre` text COLLATE utf8_spanish_ci NOT NULL,
+  `apellidos` text COLLATE utf8_spanish_ci NOT NULL,
+  `email` text COLLATE utf8_spanish_ci NOT NULL,
+  `clave` text COLLATE utf8_spanish_ci NOT NULL,
+  `tipo` text COLLATE utf8_spanish_ci NOT NULL,
+  `avatar` text COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `email`, `clave`, `tipo`, `avatar`) VALUES
+(1, 'Holly', '', 'holly@aol.com', 'hollyfrombadlands', 'registrado', 'sissy.png'),
+(2, 'David', 'Vargas', 'dvcarrillo@correo.ugr.es', 'davidvargas', 'superusuario', 'david.jpg');
+
 --
 -- Índices para tablas volcadas
 --
@@ -94,6 +140,18 @@ ALTER TABLE `comentarios`
   ADD UNIQUE KEY `id` (`id`);
 
 --
+-- Indices de la tabla `tipo_usuario`
+--
+ALTER TABLE `tipo_usuario`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -107,6 +165,18 @@ ALTER TABLE `articulos`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `tipo_usuario`
+--
+ALTER TABLE `tipo_usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
