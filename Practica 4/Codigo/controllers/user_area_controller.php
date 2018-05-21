@@ -10,7 +10,7 @@ class UserAreaController
 {
     public $loginItem = "";
     public $user;
-    public $alertMsg;
+    public $alertMsg = "";
 
     public function __construct() {
         require_once('models/user.php');
@@ -41,9 +41,19 @@ class UserAreaController
                     if ($success) {
                         require_once('views/user_area/userArea.php');
                     } else {
-                        $this->alertMsg = "Usuario o clave incorrectos. Por favor introduzca de nuevo sus datos.";
+                        $this->alertMsg = "Usuario o clave incorrectos. Por favor introduzca de nuevo sus datos";
                         require_once('views/user_area/loginForm.php');
                     }
+                }
+                break;
+            case 'registeruser':
+                $success = $this->processUserRegistration();
+                if ($success) {
+                    $this->alertMsg = "Se ha registrado correctamente. Por favor, inicie sesion";
+                    require_once("views/user_area/loginForm.php");
+                }
+                else {
+                    require_once("views/user_area/registrationForm.php");
                 }
                 break;
             default:
@@ -76,6 +86,47 @@ class UserAreaController
         return true;
     }
 
+    private function processUserRegistration() {
+        if ((!isset($_POST['name'])) || (!isset($_POST['email'])) || (!isset($_POST['password']))
+            || (!isset($_POST['confirm-password']))) {
+            $this->alertMsg = "Por favor, complete todos los campos requeridos y vuelva a intentarlo";
+            return false;
+        }
+
+        $entered_name = $_POST['name'];
+        $entered_surname = $_POST['surname'];
+        $entered_email = $_POST['email'];
+        $entered_password = $_POST['password'];
+        $entered_password_c = $_POST['confirm-password'];
+
+        $default_type = "registrado";
+        $default_avatar = "avatar.png";
+
+        if ($entered_password !=  $entered_password_c) {
+            $this->alertMsg = "Las claves no coinciden. Por favor, vuelva a intentarlo";
+            $this->alertMsg .= "\n" . $entered_password . " / " . $entered_password_c;
+            return false;
+        }
+
+        // Check if the user already exists on the database
+        $exists = User::exists($entered_email);
+        if($exists) {
+            $this->alertMsg = "El usuario especificado ya existe en el sistema";
+            return false;
+        }
+
+        // If it does not exists, register the new user
+        $success = User::addUser($entered_name, $entered_surname, $entered_email, $entered_password, $default_type,
+            $default_avatar);
+
+        if (!$success) {
+            $this->alertMsg = "Ha habido un problema registrando su usuario";
+            return false;
+        }
+
+        return true;
+    }
+
     private function processActions(){
         if(isset($_GET['action'])) {
             $action = $_GET['action'];
@@ -86,7 +137,7 @@ class UserAreaController
                     session_unset();
                     // destroy the session
                     session_destroy();
-                    $this->alertMsg = "Sesion cerrada. Hasta pronto.";
+                    $this->alertMsg = "Sesion cerrada, hasta pronto";
                     break;
             }
         }

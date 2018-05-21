@@ -12,6 +12,15 @@
         <img src="views/img/patterns/lines.jpg" alt="line pattern"/>
     </div>
 
+    <?php
+    if ($this->alertMsg != "") { ?>
+        <div class="alert-box">
+            <p><i class="fas fa-info-circle"></i> <?php echo($this->alertMsg); ?></p>
+        </div>
+    <?php
+        $this->alertMsg = "";
+    } ?>
+
     <div class="form-title-box">
         <h1>Iniciar sesión como usuario registrado</h1>
         <p>

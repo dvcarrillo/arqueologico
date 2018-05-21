@@ -17,6 +17,24 @@ Estilos para la vista de la area de usuario
     margin: 0;
 }
 
+.alert-box {
+    width: 90%;
+    background-color: #66ccff;
+    border: 1px solid #66ccff;
+    border-radius: 10px;
+    padding: 0 0 0 15px;
+    margin: 20px 0 10px 10px;
+}
+
+.alert-box p {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.alert-box i {
+    margin-right: 5px;
+}
+
 .form-title-box {
     margin-left: 10px;
     width: 90%;
