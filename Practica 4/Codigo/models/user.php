@@ -74,4 +74,36 @@ class User
         }
     }
 
+    public static function exists($email) {
+        $db = ConexionDB::getInstance();
+        $exists = false;
+
+        $result = $db->prepare('SELECT * FROM usuarios WHERE email = :email');
+
+        $result->execute(array('email' => $email));
+        $usuario = $result->fetch();
+
+        if($usuario)
+            $exists = true;
+
+        return $exists;
+    }
+
+    public static function addUser($name, $surname, $email, $password, $type, $avatar) {
+        $db = ConexionDB::getInstance();
+
+        $stmt = $db->prepare("INSERT INTO usuarios (id, nombre, apellidos, email, clave, tipo, avatar) 
+              VALUES (NULL, :nombre, :apellidos, :email, :clave, :tipo, :avatar)");
+
+        $stmt->bindParam(':nombre',$name);
+        $stmt->bindParam(':apellidos',$surname);
+        $stmt->bindParam(':email',$email);
+        $stmt->bindParam(':clave',$password);
+        $stmt->bindParam(':tipo',$type);
+        $stmt->bindParam(':avatar',$avatar);
+
+        $success = $stmt->execute();
+
+        return $success;
+    }
 }

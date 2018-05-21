@@ -12,6 +12,15 @@
         <img src="views/img/patterns/lines.jpg" alt="line pattern"/>
     </div>
 
+    <?php
+    if ($this->alertMsg != "") { ?>
+        <div class="alert-box">
+            <p><i class="fas fa-info-circle"></i> <?php echo($this->alertMsg); ?></p>
+        </div>
+        <?php
+        $this->alertMsg = "";
+    } ?>
+
     <div class="form-title-box">
         <h1>Creación de una nueva cuenta</h1>
         <p>
@@ -32,7 +41,7 @@
                 <input type="text" placeholder="Escribe tu nombre" name="name" required>
 
                 <label for="surname">Apellidos</label>
-                <input type="text" placeholder="Escribe tus apellidos" name="surname" required>
+                <input type="text" placeholder="Escribe tus apellidos" name="surname">
                 <br>
 
                 <label for="email">Correo electrónico</label>

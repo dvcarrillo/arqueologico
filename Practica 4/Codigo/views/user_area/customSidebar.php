@@ -6,7 +6,7 @@
  * Time: 1:06
  */
 
-if(($item == 'login') || ($item == 'registration')) { ?>
+if(($item == 'login') || ($item == 'registration') || ($item == 'registeruser')) { ?>
     <li><a href="?option=login&item=login" class="<?php
         if ($item == 'login')
             echo ("active");
