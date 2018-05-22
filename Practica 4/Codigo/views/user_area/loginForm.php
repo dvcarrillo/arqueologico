@@ -43,7 +43,7 @@
                 <label for="password">Contraseña</label>
                 <input type="password" placeholder="Escribe tu contraseña" name="password" required>
 
-                <button type="submit">Entrar</button>
+                <button id="login-button" onclick="swapByLoadingIcon()" type="submit">Entrar</button>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Mantener la sesión iniciada
                 </label>
@@ -51,3 +51,14 @@
         </form>
     </div>
 </div>
+
+<script>
+    function swapByLoadingIcon() {
+        let previousHTML = document.getElementById("login-button").innerHTML;
+        document.getElementById("login-button").innerHTML = "<i class=\"fas fa-sync fa-spin\"></i>";
+        setTimeout(
+            function() {
+                document.getElementById("login-button").innerHTML = previousHTML;
+            }, 3000);
+    }
+</script>

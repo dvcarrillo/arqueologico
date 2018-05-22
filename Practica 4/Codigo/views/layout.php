@@ -29,6 +29,7 @@
 
         <!-- Scripts -->
         <script src="views/scripts/comments.js"></script>
+        <script src="views/scripts/loadIcons.js"></script>
 
         <title>Arqueológico Granada</title>
     </head>

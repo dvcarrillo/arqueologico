@@ -53,7 +53,7 @@
                 <label for="confirm-password">Confirma tu contraseña</label>
                 <input type="password" placeholder="Escribe de nuevo tu contraseña" name="confirm-password" required>
 
-                <button type="submit">Crear cuenta</button>
+                <button id="login-button" onclick="swapByLoadingIcon()" type="submit">Crear cuenta</button>
             </div>
         </form>
     </div>
