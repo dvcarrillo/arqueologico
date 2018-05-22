@@ -51,14 +51,3 @@
         </form>
     </div>
 </div>
-
-<script>
-    function swapByLoadingIcon() {
-        let previousHTML = document.getElementById("login-button").innerHTML;
-        document.getElementById("login-button").innerHTML = "<i class=\"fas fa-sync fa-spin\"></i>";
-        setTimeout(
-            function() {
-                document.getElementById("login-button").innerHTML = previousHTML;
-            }, 3000);
-    }
-</script>
