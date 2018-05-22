@@ -97,9 +97,9 @@
                 </li>
                 <li>
                     <h3>ARQUEOLÓGICO SOCIAL</h3>
-                    <p><a href="#">Facebook</a></p>
-                    <p><a href="#">Twitter</a></p>
-                    <p><a href="#">Instagram</a></p>
+                    <p><i style="color: white; margin-right: 5px;" class="fab fa-facebook"></i> <a href="#">Facebook</a></p>
+                    <p><i style="color: white; margin-right: 5px;" class="fab fa-twitter"></i> <a href="#">Twitter</a></p>
+                    <p><i style="color: white; margin-right: 5px;" class="fab fa-instagram"></i> <a href="#">Instagram</a></p>
                 </li>
             </ul>
         </footer>

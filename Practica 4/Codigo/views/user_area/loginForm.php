@@ -8,9 +8,9 @@
 ?>
 
 <div class="main">
-    <div class="big-picture">
-        <img src="views/img/patterns/lines.jpg" alt="line pattern"/>
-    </div>
+<!--    <div class="big-picture">-->
+<!--        <img src="views/img/patterns/lines.jpg" alt="line pattern"/>-->
+<!--    </div>-->
 
     <?php
     if ($this->alertMsg != "") { ?>

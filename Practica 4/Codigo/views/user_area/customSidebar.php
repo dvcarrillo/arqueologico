@@ -15,7 +15,14 @@ if(($item == 'login') || ($item == 'registration') || ($item == 'registeruser'))
         if ($item == 'registration')
             echo ("active");
         ?>">CREA TU CUENTA</a></li>
-<?php } else if ($item == 'userarea') { ?>
-    <li><a href="#">MODIFICA TUS DATOS</a></li>
+<?php } else { ?>
+    <li><a href="?option=login&item=userarea" class="<?php
+        if ($item == 'userarea')
+            echo ("active");
+        ?>">TU PERFIL</a></li>
+    <li><a href="?option=login&item=modifydata" class="<?php
+        if ($item == 'modifydata')
+            echo ("active");
+        ?>">MODIFICA TUS DATOS</a></li>
     <li><a href="?option=login&item=login&action=close">CERRAR SESIÓN</a></li>
 <?php } ?>
