@@ -13,14 +13,28 @@
     // };
 </script>
 
-<h1>WELCOME TO THE GREATEST USER AREA EVER!</h1>
-<h3>Oh well, I can sense I have received some important data... let me check...</h3>
+<div style="width: 90%;">
+    <h1>Hola de nuevo, <?php echo($this->user->nombre) ?></h1>
+    <p>
+        Desde aquí puedes llevar a cabo todas las acciones relativas a tu cuenta. A continuación, se muestran tus datos de
+        usuario actuales. Si deseas modificar tus datos, por favor pulsa en el botón disponible a continuación.
+    </p>
+    <h2 style="margin-top: 20px">Tu ficha</h2>
+</div>
 
-<p>Yes! Yes! Got them<br></p>
-<p>Is your email... something like... <?php echo($this->user->email) ?>?</p>
-<p>And your password <?php echo($this->user->clave)?>?<br></p>
-
-<?php
-var_dump($this->user) ?>
-
-<p>Ho ho ho.. I'm all powerful!</p>
+<div class="user-box">
+    <div class="img-container">
+        <img src="views/img/avatar/<?php echo($this->user->avatar) ?>" alt="avatar de usuario"/>
+    </div>
+    <div class="data-container">
+        <strong>Nombre y apellidos</strong>
+        <p><?php echo($this->user->nombre . " " . $this->user->apellidos) ?></p>
+        <strong>Email</strong>
+        <p><?php echo($this->user->email) ?></p>
+        <strong>Tipo</strong>
+        <p class="locked">Usuario <?php echo($this->user->tipo) ?></p>
+        <div class="buttons">
+            <a class="a-button" href="?option=login&item=userarea">Modificar datos</a>
+        </div>
+    </div>
+</div>

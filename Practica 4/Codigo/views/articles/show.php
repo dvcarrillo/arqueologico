@@ -39,7 +39,7 @@
         <!-- Bloque de comparticion -->
         <div class="comments-block" id="share-block">
             <h2>Compartir vía</h2>
-            <button class="article-button" type="button" style="background-color: #3b5998; color: white; border: 1px solid #3b5998; margin-top: 5px;" onclick="facebookShare();"><i class="fab fa-facebook-f" style="margin-right: 5px;"></i>  Facebook</button>
+            <button class="article-button" type="button" style="background-color: #3b5998; color: white; border: 1px solid #3b5998; margin-top: 5px;" onclick="facebookShare();"><i class="fab fa-facebook" style="margin-right: 5px;"></i>  Facebook</button>
             <button class="article-button" type="button" style="background-color: #00aced; color: white; border: 1px solid #00aced; margin-top: 5px;" onclick="twitterShare();"><i class="fab fa-twitter" style="margin-right: 5px;"></i>  Twitter</button>
         </div>
 
