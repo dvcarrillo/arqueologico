@@ -57,10 +57,13 @@
                         if ($option == "login")
                             echo ("active");
                     ?>"><?php
-                        if(isset($_SESSION['user_name']))
+                    require_once('controllers/article_controller.php');
+                        if(isset($_SESSION['user_name'])){
                             echo(strtoupper($_SESSION['user_name']));
-                        else
+                        }   
+                        else{
                             echo("ENTRAR");
+                        }
                     ?></a></li>
                 </ul>
             </nav>

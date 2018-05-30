@@ -25,6 +25,10 @@ class Article
     public $imagenes;
     public $pie_imagen;
 
+    public $mostrarComentar;
+    public $mostrarEditarBorrarComentario;
+    public $mostrarEditarArticulo;
+
     /**
      * Article constructor.
      * @param $id
@@ -49,6 +53,10 @@ class Article
         $this->imagen_principal = $imagen_principal;
         $this->imagenes = explode(" ", $imagenes);
         $this->pie_imagen = $pie_imagen;
+
+        $this->mostrarComentar=false;
+        $this->mostrarEditarBorrarComentario=false;
+        $this->mostrarEditarArticulo=false;
     }
 
     public static function all() {

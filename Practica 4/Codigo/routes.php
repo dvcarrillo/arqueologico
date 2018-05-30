@@ -35,21 +35,25 @@ function call($option, $item) {
             require_once('controllers/article_controller.php');
             $action = $option;
             $option = new ArticleController();
+            $option->detectUserType();
             break;   
         case 'print':
             require_once('controllers/article_controller.php');
             $action = $option;
             $option = new ArticleController();
+            $option->detectUserType();
             break;
         case 'index':
             require_once('controllers/article_controller.php');
             $action = $option;
             $option = new ArticleController();
+            $option->detectUserType();
             break;   
         case 'error':
             require_once('controllers/article_controller.php');
             $action = $option;
             $option = new ArticleController();
+            $option->detectUserType();
             break;
     }
     $option->{ $action }();

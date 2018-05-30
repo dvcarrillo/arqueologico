@@ -72,6 +72,7 @@
             <?php $comment_num += 1;
                 } ?>
             </div>
+            <?php if($article->mostrarComentar){?>
             <!-- Nuevo comentario -->
             <div class="profile-img">
                 <img src="views/img/avatar/avatar.png" alt="avatar">
@@ -82,6 +83,7 @@
                 <input class="new-comment-email" id="email-field" type="email" placeholder="Correo electrónico">
                 <input class="new-comment-button" id="comment-button" type="button" onclick="addComment();" value="Comentar">
             </form>
+            <?php } ?>
         </div>
     </div>
 </div>
