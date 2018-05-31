@@ -119,6 +119,7 @@ form > .container label {
     font-size: 16px;
     cursor: pointer;
     width: 30%;
+    height: 37px;
 }
 
 .container button:hover {
@@ -134,27 +135,28 @@ form > .container label {
     width: 60%;
     border: 2px solid lightgrey;
     border-radius: 20px;
-    max-height: 705px;
+    max-height: 695px;
 }
 
-.reg-box > form > .img-container {
+.reg-box > form > .img-container, .modify-form > form > .img-container {
 }
 
-.reg-box > form > .img-container img {
+.reg-box > form > .img-container img, .modify-form > form > .img-container img {
     display: block;
     height: 120px;
     margin: auto;
     margin-bottom: 10px;
     margin-top: 10px;
+    border-radius: 70px;
 }
 
-.reg-box > form > .container {
+.reg-box > form > .container, .modify-form > form > .container {
     height: 100%;
     width: 100%;
     padding: 20px 30px 20px 10px;
 }
 
-.reg-box > form > .container input[type=email], input[type=password], input[type=text] {
+.reg-box > form > .container input[type=email], input[type=password], input[type=text], .modify-form > form > .container input[type=email], input[type=password], input[type=text] {
     width: 100%;
     display: block;
     padding: 12px 20px;
@@ -165,8 +167,9 @@ form > .container label {
     font-size: 15px;
 }
 
-.reg-box > form > .container button {
+.reg-box > form > .container button, .modify-form > form > .container button {
     margin-top: 10px;
+    height: 37px;
 }
 
 /* Estilos especificos para el area de usuario */
@@ -226,6 +229,7 @@ form > .container label {
 
 .data-container > .buttons {
     margin-top: 26px;
+    height: 37px;
 }
 
 .a-button {
@@ -245,4 +249,34 @@ form > .container label {
 .a-button:hover {
     background-color: rgb(100, 100, 100);
     color:white;
+}
+
+/* Estilos especificos para el area de modificacion de datos */
+
+.modify-form {
+    margin-left: 10px;
+    margin-top: 30px;
+    padding: 20px;
+    width: 50%;
+    border: 2px solid lightgrey;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    height: 770px;
+}
+
+.modify-form > form > .img-container img {
+    display: block;
+    height: 120px;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.modify-form > form > .container input[type=file] {
+    width: 100%;
+    display: block;
+    padding: 12px 20px 0 0;
+    box-sizing: border-box;
+    font-size: 15px;
 }

@@ -7,11 +7,14 @@
  */
 ?>
 
-<script>
-    // window.onload = function () {
-    //     parent.window.location.reload();
-    // };
-</script>
+<?php
+if ($this->alertMsg != "") { ?>
+    <div class="alert-box">
+        <p><i class="fas fa-info-circle"></i> <?php echo($this->alertMsg); ?></p>
+    </div>
+    <?php
+    $this->alertMsg = "";
+} ?>
 
 <div style="width: 90%;">
     <h1>Hola de nuevo, <?php echo($this->user->nombre) ?></h1>
@@ -34,7 +37,7 @@
         <strong>Tipo</strong>
         <p class="locked">Usuario <?php echo($this->user->tipo) ?></p>
         <div class="buttons">
-            <a class="a-button" href="?option=login&item=userarea">Modificar datos</a>
+            <a class="a-button" href="?option=login&item=modifydata">Modificar datos</a>
         </div>
     </div>
 </div>

@@ -21,7 +21,14 @@ class UserAreaController
         $this->loginItem = $item;
     }
 
+    public function setUser() {
+        if (isset($_SESSION['user_email']) && isset($_SESSION['user_email'])) {
+            $this->user = User::find($_SESSION['user_email'], $_SESSION['user_password']);
+        }
+    }
+
     public function show() {
+        $this->setUser();
         $this->processActions();
 
         switch ($this->loginItem) {
@@ -33,7 +40,6 @@ class UserAreaController
                 break;
             case 'userarea':
                 if (isset($_SESSION['user_name'])) {
-                    $this->user = User::find($_SESSION['user_email'], $_SESSION['user_password']);
                     require_once('views/user_area/userArea.php');
                 }
                 else {
@@ -56,6 +62,12 @@ class UserAreaController
                     require_once("views/user_area/registrationForm.php");
                 }
                 break;
+            case 'modifydata':
+                if(isset($_SESSION['user_name']))
+                    require_once('views/user_area/modifyDataForm.php');
+                else
+                    require_once('views/pages/error.php');
+                break;
             default:
                 require_once('views/pages/error.php');
                 break;
@@ -75,6 +87,7 @@ class UserAreaController
 
         // Set session variables
         $_SESSION['user_name'] = $entered_user->nombre;
+        $_SESSION['user_surname'] = $entered_user->apellidos;
         $_SESSION['user_password'] = $entered_user->clave;
         $_SESSION['user_email'] = $entered_user->email;
         $_SESSION['user_type'] = $entered_user->tipo;
@@ -104,7 +117,6 @@ class UserAreaController
 
         if ($entered_password !=  $entered_password_c) {
             $this->alertMsg = "Las claves no coinciden. Por favor, vuelva a intentarlo";
-            $this->alertMsg .= "\n" . $entered_password . " / " . $entered_password_c;
             return false;
         }
 
@@ -139,7 +151,35 @@ class UserAreaController
                     session_destroy();
                     $this->alertMsg = "Sesion cerrada, hasta pronto";
                     break;
+                case 'modify':
+                    $this->modifyUser();
+                    break;
             }
         }
+    }
+
+    private function modifyUser() {
+        if ((!isset($_POST['name'])) || (!isset($_POST['email'])) || (!isset($_POST['password']))
+            || (!isset($_POST['confirm-password']))) {
+            $this->alertMsg = "Por favor, complete todos los campos requeridos y vuelva a intentarlo";
+            return false;
+        }
+
+        $modified_name = $_POST['name'];
+        $modified_surname = $_POST['surname'];
+        $modified_avatar = $_POST['avatar-upload'];
+        $modified_email = $_POST['email'];
+        $modified_password = $_POST['password'];
+        $modified_password_c = $_POST['confirm-password'];
+
+        if ($modified_avatar == "" || !isset($_POST['avatar-upload'])) {
+            $modified_avatar = "avatar.png";
+        }
+        else {
+
+        }
+
+        
+
     }
 }
