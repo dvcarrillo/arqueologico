@@ -43,7 +43,7 @@
                 <label for="password">Contraseña</label>
                 <input type="password" placeholder="Escribe tu contraseña" name="password" required>
 
-                <button id="login-button" onclick="swapByLoadingIcon()" type="submit">Entrar</button>
+                <button id="loading-button" onclick="swapByLoadingIcon()" type="submit">Entrar</button>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Mantener la sesión iniciada
                 </label>
