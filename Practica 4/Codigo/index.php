@@ -10,6 +10,14 @@ Autores:
 Archivo principal de la pagina que enlaza con el resto
 -->
 
+<!--
+** NOTE **
+To make the img upload work on the user data modification on XAMPP 7.x for macOS
+
+chown -R nobody avatar
+chmod -R 777 avatar
+-->
+
 <?php
     session_start();
     require_once('db/db.php');
