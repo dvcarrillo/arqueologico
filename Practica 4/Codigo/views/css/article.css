@@ -232,39 +232,41 @@ Estilos para la vista de articulo
     resize: none;
 }
 
-.new-comment-name {
-    border: 1px solid rgb(161, 161, 161);
-    margin-top: 10px;
-    border-radius: 5px;
-    padding: 15px;
-    font-size: 16px;
-    width: 30%;
-}
-
-.new-comment-email {
-    border: 1px solid rgb(161, 161, 161);
-    margin-top: 10px;
-    margin-left: 5px;
-    border-radius: 5px;
-    padding: 15px;
-    font-size: 16px;
-    width: 59%;
-}
-
 .new-comment-button {
     background-color: grey;
     color: white;
     border: 1px solid grey;
     font-family: 'Roboto', sans-serif;
     margin-top: 10px;
-    padding: 14px;
+    padding: 8px;
+    margin-right: 15px;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     width: 20%;
+    height: 45px;
 }
 
 .new-comment-button:hover {
     background-color: rgb(100, 100, 100);
     color:white;
+}
+
+.comment-denied {
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    padding: 10px 20px 10px 30px;
+    margin: 40px 0 0 0;
+}
+
+.comment-denied p, .comment-denied i {
+    display: inline-block;
+    color: grey;
+}
+
+.comment-denied a {
+    color: grey;
+    font-style: normal;
+    font-weight: bold;
 }

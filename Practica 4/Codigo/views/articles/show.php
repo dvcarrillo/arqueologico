@@ -73,15 +73,20 @@
                 } ?>
             </div>
             <!-- Nuevo comentario -->
-            <div class="profile-img">
-                <img src="views/img/avatar/avatar.png" alt="avatar">
-            </div>
-            <form class="comment-form">
-                <textarea class="new-comment-text" id="comment-field" name="comment" onkeypress="banWords(event);" onfocusout="censorBeep();" placeholder="Introduce tu comentario..."></textarea>
-                <input class="new-comment-name" id="name-field" type="text" placeholder="Nombre">
-                <input class="new-comment-email" id="email-field" type="email" placeholder="Correo electrónico">
-                <input class="new-comment-button" id="comment-button" type="button" onclick="addComment();" value="Comentar">
-            </form>
+            <?php if (isset($_SESSION['user_name'])) { ?>
+                <div class="profile-img">
+                    <img src="views/img/avatar/<?php echo($_SESSION['user_avatar']); ?>" alt="avatar">
+                </div>
+                <form class="comment-form" action="index.php?option=show&item=<?php echo($_GET['item']);?>$action=new-comment" method="post">
+                    <textarea class="new-comment-text" id="comment-field" name="comment" onkeypress="banWords(event);" onfocusout="censorBeep();" placeholder="Introduce tu comentario..."></textarea>
+                    <button class="new-comment-button" id="comment-button" type="submit" onclick="swapByLoadingIcon()">Comentar</button>
+                </form>
+            <?php }
+            else {?>
+                <div class="comment-denied">
+                    <i class="far fa-comment" style="margin-right: 5px;"></i> <p>Por favor, <a href="?option=login&item=login">inicie sesión</a> o <a href="?option=login&item=registration">cree una cuenta</a> para poder comentar en artículos</p>
+                </div>
+            <?php } ?>
         </div>
     </div>
 </div>

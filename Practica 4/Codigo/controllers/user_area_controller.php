@@ -153,6 +153,7 @@ class UserAreaController
                     break;
                 case 'modify':
                     $this->modifyUser();
+                    $this->setUser();
                     break;
             }
         }
@@ -184,7 +185,6 @@ class UserAreaController
                 }
             }
             else {
-                echo("nooooooo SE HAN ENCONTRADO FICHEIROS");
                 $modified_avatar = $this->user->avatar;
             }
         }

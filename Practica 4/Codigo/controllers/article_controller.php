@@ -23,7 +23,7 @@ class ArticleController
         require_once('views/pages/error.php');
     }
 
-    public function print() {
+    public function print_article() {
         // An URL is expected of form ?option=article&id=XX
         // without an ID, it redirects to the error page
         $articles = Article::all();
