@@ -166,9 +166,7 @@ Estilos para la vista de articulo
 }
 
 .control-pad .button {
-    background-color: grey;
-    color: white;
-    border: 1px solid grey;
+    background-color: white;
     font-family: 'Roboto', sans-serif;
     padding: 10px 20px 10px 20px;
     margin-right: 5px;
@@ -180,13 +178,25 @@ Estilos para la vista de articulo
 }
 
 .control-pad .delete {
-    background-color: #cc0000;
+    color: rgb(177, 0, 0);
     border: 1px solid #cc0000;
 }
 
 .control-pad .edit {
+    color: #3399ff;
+    border: 1px solid #3399ff;
+}
+
+.control-pad .delete:hover {
+    background-color: rgb(177, 0, 0);
+    border: 1px solid #b30000;
+    color: white;
+}
+
+.control-pad .edit:hover {
     background-color: #3399ff;
     border: 1px solid #3399ff;
+    color: white;
 }
 
 .control-pad form {
@@ -210,8 +220,8 @@ Estilos para la vista de articulo
 }
 
 .control-pad button:hover {
-    background-color: #3399ff;
-    border: 1px solid #3399ff;
+    background-color: #0080ff;
+    border: 1px solid #0080ff;
 }
 
 .control-pad p {

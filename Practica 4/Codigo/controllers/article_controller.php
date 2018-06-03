@@ -14,6 +14,10 @@ class ArticleController
     }
 
     public function index() {
+        if(isset($_GET['action'])) {
+            $this->processActions();
+        }
+
         // Stores all information in a variable
         $articles = Article::all();
         require_once('views/articles/index.php');
@@ -39,6 +43,7 @@ class ArticleController
         }
     }
 
+    // Mejora: comprobar si existe algun articulo con el indice dado
     public function show() {
         if(isset($_GET['action'])) {
             $this->processActions();
@@ -49,19 +54,19 @@ class ArticleController
         $articles = Article::all();
         $comments = Comment::all();
 
-        if ((!isset($_GET['item']) || ($_GET['item'] >= count($articles)))) {
-            call('error', 'error');
-        }
-        else {
-            $article = Article::find($_GET['item']);
-            $comment = Comment::find($article->id);
-            require_once('views/articles/show.php');
-        }
+        $article = Article::find($_GET['item']);
+        $comment = Comment::find($article->id);
+        require_once('views/articles/show.php');
     }
 
     private function processActions() {
         $action = $_GET['action'];
         switch ($action) {
+            case 'new-article':
+                $success = $this->publishNewArticle();
+                if(!$success)
+                    echo("Error al publicar el artículo");
+                break;
             case 'new-comment':
                 $success = $this->publishNewComment();
                 if(!$success)
@@ -78,6 +83,26 @@ class ArticleController
                     echo("Error al eliminar el comentario");
                 break;
         }
+    }
+
+    private function publishNewArticle() {
+        date_default_timezone_set('Europe/Madrid');
+        $today = getdate();
+        $day = $today['mday'];
+        $month = $today['mon'];
+        $year = $today['year'];
+
+        $titulo = $_POST['title'];
+        $subtitulo = $_POST['subtitle'];
+        $fecha = $year . "-" . $month . "-" . $day;
+        $contenido = $_POST['content'];
+        $imagen_principal = $_POST['main-image'];
+        $imagenes = $_POST['article-images'];
+        $pie_imagen = $_POST['footer-image'];
+
+        $success = Article::addNew($titulo, $subtitulo, $fecha, $contenido, $imagen_principal, $imagenes, $pie_imagen);
+
+        return $success;
     }
 
     private function publishNewComment() {

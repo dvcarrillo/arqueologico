@@ -76,7 +76,7 @@
 
                                 <form id="edit-comment-form-<?php echo $comment->id_comentario ?>" style="display: none;" action="?option=show&item=<?php echo($_GET['item']);?>&action=edit&comment_id=<?php echo $comment->id_comentario; ?>" method="post">
                                     <textarea class="" id="edit-comment-field" name="comment" onkeypress="banWords(event);" onfocusout="censorBeep();" placeholder="Introduce tu comentario..."><?php echo $comment->contenido ?></textarea>
-                                    <button class="new-comment-button" id="edit-comment-button" type="submit" onclick="swapByLoadingIcon()">Guardar edición</button>
+                                    <button class="new-comment-button" id="edit-comment-button" type="submit">Guardar edición</button>
                                 </form>
                             </div>
                         <?php } ?>

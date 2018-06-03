@@ -4,7 +4,7 @@ Arturo Cortés Sánchez
 Sistemas de Información Basados en Web
 Curso 2017 - 2018
 
-Práctica 1
+Práctica 4
 Estilos de página genéricos
 */
 
@@ -104,6 +104,59 @@ Estilos de página genéricos
 .main {
     float: left;
     width: 70%;
+}
+
+.article-control-pad {
+    border: 1px solid lightgray;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 10px 10px 30px 10px;
+}
+
+.article-control-pad strong {
+    color: grey;
+}
+
+.article-control-pad p {
+    color: grey;
+}
+
+.article-control-pad .button, .article-control-pad button {
+    background-color: #2eb82e;
+    color: white;
+    border: 1px solid #2eb82e;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px 0 0 0;
+}
+
+.article-control-pad a:hover, .article-control-pad button:hover {
+    background-color: #29a329;
+    border: 1px solid #29a329;
+}
+
+.article-control-pad form {
+    margin: 40px 0 5px 0;
+}
+
+.article-control-pad input, .article-control-pad textarea {
+    width: 100%;
+    display: block;
+    padding: 12px 20px;
+    margin: 5px 10px 15px 0;
+    border: 1px solid lightgrey;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.article-control-pad textarea {
+    resize: none;
+    height: 10em;
 }
 
 .box {
