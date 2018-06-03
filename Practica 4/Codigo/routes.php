@@ -38,7 +38,7 @@ function call($option, $item) {
             break;   
         case 'print':
             require_once('controllers/article_controller.php');
-            $action = $option;
+            $action = 'print_article';
             $option = new ArticleController();
             break;
         case 'index':

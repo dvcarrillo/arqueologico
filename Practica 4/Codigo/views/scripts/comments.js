@@ -141,7 +141,13 @@ function addComment() {
         var month = MONTH_NAMES[date.getMonth()];
         var year = date.getFullYear();
         var time = date.toTimeString().split(' ')[0];
-        var date_string = " A las " + time + " el " + day + " de " + month + " de " + year;
+        var time_formatted;
+
+        for (let i = 0; i < time.length - 2; i++) {
+            time_formatted += time[i];
+        }
+
+        var date_string = " A las " + time_formatted + " el " + day + " de " + month + " de " + year;
 
         // Actualiza la vista con un nuevo bloque de comentario
         var new_comment =
@@ -187,4 +193,15 @@ function banWords(event){
     var char = event.which || event.keyCode;
     if (char == 32)
         censorBeep();
+}
+
+/** Muestra el formulario de edicion de comentario
+ */
+function displayEditCommentForm(id_comment) {
+    var lookfor = "edit-comment-form-" + id_comment;
+    var element = document.getElementById(lookfor);
+    if (element.style.display == "block")
+        element.style.display = "none";
+    else
+        element.style.display = "block";
 }
