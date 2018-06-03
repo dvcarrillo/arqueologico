@@ -64,10 +64,18 @@ class ArticleController
         switch ($action) {
             case 'new-comment':
                 $success = $this->publishNewComment();
-
                 if(!$success)
                     echo("Error al publicar el comentario");
-
+                break;
+            case 'edit':
+                $success = $this->modifyComment();
+                if(!$success)
+                    echo("Error al modificar el comentario");
+                break;
+            case 'delete':
+                $success = $this->deleteComment();
+                if(!$success)
+                    echo("Error al eliminar el comentario");
                 break;
         }
     }
@@ -93,5 +101,29 @@ class ArticleController
 
         return $success;
     }
+
+    private function deleteComment() {
+        $comment_id = $_GET['comment_id'];
+
+        if (!isset($_SESSION['user_type']) || ($_SESSION['user_type'] == 'registrado')) {
+            return false;
+        }
+
+        $success = Comment::deleteById($comment_id);
+        return $success;
+    }
+
+    private function modifyComment() {
+        $comment_id = $_GET['comment_id'];
+        $content = $_POST['comment'];
+
+        $content .= '<br><br><span style="color:grey; font-style: italic">Comentario editado por moderador</span>';
+
+        if (!isset($_SESSION['user_type']) || ($_SESSION['user_type'] == 'registrado')) {
+            return false;
+        }
+
+        $success = Comment::modifyById($comment_id, $content);
+        return $success;
+    }
 }
-?>

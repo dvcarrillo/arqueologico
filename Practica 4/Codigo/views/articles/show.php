@@ -65,9 +65,21 @@
                         <div class="comment-text">
                             <p class="comment-author">#<span id="comment-number"><?php echo $comment_num ?></span> <span id="author-name" onclick="showInfoBox(1, '<?php echo $comment->nombre; ?>', '<?php echo $comment->imagen; ?>');"><?php echo $comment->nombre; ?></span><!-- : --></p>
                             <p class="comment-content" id="comment-content"><?php echo $comment->contenido; ?></p>
-                            <p class="comment-date">A las <?php echo $comment->hora; ?> el <?php echo $comment->getDate(); ?></p>
+                            <p class="comment-date">A las <?php echo $comment->formatTime(); ?> el <?php echo $comment->getDate(); ?></p>
                         </div>
+                        <!-- Controles de moderacion-->
+                        <?php if (isset($_SESSION['user_type']) && (($_SESSION['user_type'] == 'moderador') || ($_SESSION['user_type'] == 'superusuario'))) { ?>
+                            <div class="control-pad">
+                                <p>Moderación de comentario</p>
+                                <a class="delete button" href="?option=show&item=<?php echo $_GET['item']; ?>&action=delete&comment_id=<?php echo $comment->id_comentario; ?>"><i class="far fa-trash-alt" style="margin-right: 5px;"></i> Borrar</a>
+                                <a class="edit button" onclick="displayEditCommentForm(<?php echo $comment->id_comentario ?>);"><i class="far fa-edit" style="margin-right: 5px;"></i> Editar</a>
 
+                                <form id="edit-comment-form-<?php echo $comment->id_comentario ?>" style="display: none;" action="?option=show&item=<?php echo($_GET['item']);?>&action=edit&comment_id=<?php echo $comment->id_comentario; ?>" method="post">
+                                    <textarea class="" id="edit-comment-field" name="comment" onkeypress="banWords(event);" onfocusout="censorBeep();" placeholder="Introduce tu comentario..."><?php echo $comment->contenido ?></textarea>
+                                    <button class="new-comment-button" id="edit-comment-button" type="submit" onclick="swapByLoadingIcon()">Guardar edición</button>
+                                </form>
+                            </div>
+                        <?php } ?>
                     </div>
             <?php $comment_num += 1;
                 } ?>
@@ -79,7 +91,7 @@
                 </div>
                 <form class="comment-form" action="index.php?option=show&item=<?php echo($_GET['item']);?>&action=new-comment" method="post">
                     <textarea class="new-comment-text" id="comment-field" name="comment" onkeypress="banWords(event);" onfocusout="censorBeep();" placeholder="Introduce tu comentario..."></textarea>
-                    <button class="new-comment-button" id="comment-button" type="submit" onclick="swapByLoadingIcon()">Comentar</button>
+                    <button class="new-comment-button" id="comment-button" type="submit" onclick="swapByLoadingIcon();">Comentar</button>
                 </form>
             <?php }
             else {?>

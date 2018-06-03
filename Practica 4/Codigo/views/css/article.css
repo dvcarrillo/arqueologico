@@ -161,7 +161,66 @@ Estilos para la vista de articulo
     font-size: 14px;
 }
 
-.comments-block form {
+.control-pad {
+    padding-left: 130px;
+}
+
+.control-pad .button {
+    background-color: grey;
+    color: white;
+    border: 1px solid grey;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px 20px 10px 20px;
+    margin-right: 5px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.control-pad .delete {
+    background-color: #cc0000;
+    border: 1px solid #cc0000;
+}
+
+.control-pad .edit {
+    background-color: #3399ff;
+    border: 1px solid #3399ff;
+}
+
+.control-pad form {
+    width: 100%;
+}
+
+.control-pad textarea {
+    border: 1px solid rgb(161, 161, 161);
+    border-radius: 5px;
+    vertical-align: text-top;
+    width: 90%;
+    height: 100px;
+    font-size: 16px;
+    resize: none;
+    padding: 20px;
+}
+
+.control-pad button {
+    background-color: #3399ff;
+    border: 1px solid #3399ff;
+}
+
+.control-pad button:hover {
+    background-color: #3399ff;
+    border: 1px solid #3399ff;
+}
+
+.control-pad p {
+    margin-top: 0px;
+    color: grey;
+    font-weight: bold;
+}
+
+.comment-form {
     float:right;
     width: 85%;
     margin: 5px;

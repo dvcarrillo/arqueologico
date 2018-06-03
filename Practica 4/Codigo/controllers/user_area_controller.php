@@ -204,6 +204,8 @@ class UserAreaController
         $_SESSION['user_type'] = $this->user->tipo;
         $_SESSION['user_avatar'] = $modified_avatar;
 
+        $this->alertMsg = "Sus datos se han modificado correctamente";
+
         return true;
     }
 
@@ -239,7 +241,6 @@ class UserAreaController
             return $uploadOk;
         } else {
             if (move_uploaded_file($_FILES["avatar-upload"]["tmp_name"], $target_file)) {
-                $this->alertMsg = "El fichero " . basename($_FILES["avatar-upload"]["name"]) . " ha sido subido correctamente";
                 return true;
             } else {
                 $this->alertMsg = "Se ha producido un error y su fichero no se ha podido subir";
