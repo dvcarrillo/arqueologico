@@ -77,6 +77,21 @@ class Article
             $article['contenido'], $article['imagen_principal'], $article['imagenes'], $article['pie_imagen']);
     }
 
+    public static function exists($id) {
+        $db = ConexionDB::getInstance();
+        $exists = false;
+
+        $result = $db->prepare('SELECT * FROM articulos WHERE id = :id');
+
+        $result->execute(array('id' => $id));
+        $articulo = $result->fetch();
+
+        if($articulo)
+            $exists = true;
+
+        return $exists;
+    }
+
     public static function addNew($titulo, $subtitulo, $fecha, $contenido, $imagen_principal, $imagenes, $pie_imagen) {
         $db = ConexionDB::getInstance();
 

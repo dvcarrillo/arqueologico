@@ -54,9 +54,14 @@ class ArticleController
         $articles = Article::all();
         $comments = Comment::all();
 
-        $article = Article::find($_GET['item']);
-        $comment = Comment::find($article->id);
-        require_once('views/articles/show.php');
+        if (!(Article::exists($_GET['item']))) {
+            require_once('views/pages/error.php');
+        }
+        else {
+            $article = Article::find($_GET['item']);
+            $comment = Comment::find($article->id);
+            require_once('views/articles/show.php');
+        }
     }
 
     private function processActions() {
