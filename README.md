@@ -2,8 +2,8 @@
 
 Works for the course of Web Development at the Universidad de Granada. Made together by:
 
-- David Vargas ([@dvcarrillo](http://github.com/dvcarrillo))
-- Arturo Cortés ([@arturocs](http://github.com/arturocs))
+- David Vargas Carrillo ([@dvcarrillo](http://github.com/dvcarrillo))
+- Arturo Cortés Sánchez ([@arturocs](http://github.com/arturocs))
 
 ## Specifications
 We started from scratch. Then, each new practice has been done over the previous one.
