@@ -77,7 +77,7 @@
                 <div class="profile-img">
                     <img src="views/img/avatar/<?php echo($_SESSION['user_avatar']); ?>" alt="avatar">
                 </div>
-                <form class="comment-form" action="index.php?option=show&item=<?php echo($_GET['item']);?>$action=new-comment" method="post">
+                <form class="comment-form" action="index.php?option=show&item=<?php echo($_GET['item']);?>&action=new-comment" method="post">
                     <textarea class="new-comment-text" id="comment-field" name="comment" onkeypress="banWords(event);" onfocusout="censorBeep();" placeholder="Introduce tu comentario..."></textarea>
                     <button class="new-comment-button" id="comment-button" type="submit" onclick="swapByLoadingIcon()">Comentar</button>
                 </form>

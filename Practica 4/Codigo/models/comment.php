@@ -77,6 +77,25 @@ class Comment
         return $list;
     }
 
+    public static function addNew($nombre, $fecha, $hora, $contenido, $email, $imagen, $id_articulo) {
+        $db = ConexionDB::getInstance();
+
+        $stmt = $db->prepare("INSERT INTO comentarios (id, nombre, fecha, hora, contenido, email, imagen, id_articulo) 
+              VALUES (NULL, :nombre, :fecha, :hora, :contenido, :email, :imagen, :id_articulo)");
+
+        $stmt->bindParam(':nombre',$nombre);
+        $stmt->bindParam(':fecha',$fecha);
+        $stmt->bindParam(':hora',$hora);
+        $stmt->bindParam(':contenido',$contenido);
+        $stmt->bindParam(':email',$email);
+        $stmt->bindParam(':imagen',$imagen);
+        $stmt->bindParam(':id_articulo',$id_articulo);
+
+        $success = $stmt->execute();
+
+        return $success;
+    }
+
     // Obtiene la fecha en un formato mas legible
     public function getDate() {
         $MONTH_NAMES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre",

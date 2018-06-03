@@ -40,6 +40,10 @@ class ArticleController
     }
 
     public function show() {
+        if(isset($_GET['action'])) {
+            $this->processActions();
+        }
+
         // An URL is expected of form ?option=article&id=XX
         // without an ID, it redirects to the error page
         $articles = Article::all();
@@ -53,6 +57,41 @@ class ArticleController
             $comment = Comment::find($article->id);
             require_once('views/articles/show.php');
         }
+    }
+
+    private function processActions() {
+        $action = $_GET['action'];
+        switch ($action) {
+            case 'new-comment':
+                $success = $this->publishNewComment();
+
+                if(!$success)
+                    echo("Error al publicar el comentario");
+
+                break;
+        }
+    }
+
+    private function publishNewComment() {
+        date_default_timezone_set('Europe/Madrid');
+        $today = getdate();
+        $hours = $today['hours'];
+        $minutes = $today['minutes'];
+        $day = $today['mday'];
+        $month = $today['mon'];
+        $year = $today['year'];
+
+        $nombre = $_SESSION['user_name'];
+        $fecha = $year . "-" . $month . "-" . $day;
+        $hora = $hours . ":" . $minutes;
+        $contenido = $_POST['comment'];
+        $email = $_SESSION['user_email'];
+        $imagen = $_SESSION['user_avatar'];
+        $id_articulo = $_GET['item'];
+
+        $success = Comment::addNew($nombre, $fecha, $hora, $contenido, $email, $imagen, $id_articulo);
+
+        return $success;
     }
 }
 ?>
