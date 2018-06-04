@@ -1,9 +1,18 @@
 
 <div class="main">
+    <?php
+    if ($this->alertMsg != "") { ?>
+        <div class="alert-box">
+            <p><i class="fas fa-info-circle"></i> <?php echo($this->alertMsg); ?></p>
+        </div>
+        <?php
+        $this->alertMsg = "";
+    } ?>
+
     <?php if (isset($_SESSION['user_type']) && (($_SESSION['user_type'] == 'gestor') || ($_SESSION['user_type'] == 'superusuario'))) { ?>
         <div class="article-control-pad">
-            <strong>Gestión de obras</strong>
-            <p>Pulse en cualquier obra para obtener más opciones</p>
+            <strong>Gestión de artículos</strong>
+            <p>Pulse en cualquier artículo para obtener más opciones</p>
             <a class="new button" onclick="displayNewArticleForm();"><i class="far fa-plus-square" style="margin-right: 5px;"></i> Nuevo artículo</a>
 
             <form class="new-article-form" id="new-article" action="?option=index&action=new-article" method="post" style="display: none;">
@@ -21,7 +30,7 @@
                 <label for="article-images">Imégenes adicionales del artículo</label>
                 <input type="text" placeholder="Localizadas en views/img/galleries" name="article-images" required>
 
-                <button id="loading-button" onclick="swapByLoadingIcon()" type="submit">Publicar</button>
+                <button class="new" id="loading-button" onclick="swapByLoadingIcon()" type="submit">Publicar</button>
             </form>
         </div>
     <?php } ?>

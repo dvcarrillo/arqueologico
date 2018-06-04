@@ -47,7 +47,7 @@ class Article
         $this->day = $fecha[2];
         $this->contenido = $contenido;
         $this->imagen_principal = $imagen_principal;
-        $this->imagenes = explode(" ", $imagenes);
+        $this->imagenes = explode(" ", rtrim($imagenes));
         $this->pie_imagen = $pie_imagen;
     }
 
@@ -108,6 +108,33 @@ class Article
 
         $success = $stmt->execute();
 
+        return $success;
+    }
+
+    public static function modifyById($article_id, $titulo, $subtitulo, $contenido, $imagen_principal, $imagenes, $pie_imagen) {
+        $db = ConexionDB::getInstance();
+
+        $stmt = $db->prepare("UPDATE articulos SET titulo = :titulo, subtitulo = :subtitulo, contenido = :contenido,
+                imagen_principal = :imagen_principal, imagenes = :imagenes, pie_imagen = :pie_imagen WHERE articulos.id = :id_articulo");
+
+        $stmt->bindParam(':titulo',$titulo);
+        $stmt->bindParam(':subtitulo',$subtitulo);
+        $stmt->bindParam(':contenido',$contenido);
+        $stmt->bindParam(':imagen_principal',$imagen_principal);
+        $stmt->bindParam(':imagenes',$imagenes);
+        $stmt->bindParam(':pie_imagen',$pie_imagen);
+        $stmt->bindParam(':id_articulo',$article_id);
+
+        $success = $stmt->execute();
+
+        return $success;
+    }
+
+    public static function deleteById($article_id) {
+        $db = ConexionDB::getInstance();
+        $stmt = $db->prepare("DELETE FROM articulos WHERE articulos.id = :article_id");
+        $stmt->bindParam(':article_id', $article_id);
+        $success = $stmt->execute();
         return $success;
     }
 }

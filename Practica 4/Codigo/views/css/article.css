@@ -4,9 +4,30 @@ Arturo Cortés Sánchez
 Sistemas de Información Basados en Web
 Curso 2017 - 2018
 
-Práctica 2
+Práctica 4
 Estilos para la vista de articulo
 */
+
+/* Article control pad */
+.article-control-pad .edit {
+    background-color: #3399ff;
+    border: 1px solid #3399ff;
+}
+
+.article-control-pad .edit:hover {
+    background-color: #0080ff;
+    border: 1px solid #0080ff;
+}
+
+.article-control-pad .delete {
+    background-color: #cc0000;
+    border: 1px solid #cc0000;
+}
+
+.article-control-pad .delete:hover {
+    background-color: rgb(177, 0, 0);
+    border: 1px solid rgb(177, 0, 0);
+}
 
 /* Article view */
 .article {
@@ -171,32 +192,32 @@ Estilos para la vista de articulo
     padding: 10px 20px 10px 20px;
     margin-right: 5px;
     border-radius: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 16px;
     cursor: pointer;
     display: inline-block;
 }
 
 .control-pad .delete {
-    color: rgb(177, 0, 0);
+    color: white;
+    background-color: #cc0000;
     border: 1px solid #cc0000;
 }
 
 .control-pad .edit {
-    color: #3399ff;
+    color: white;
+    background-color: #3399ff;
     border: 1px solid #3399ff;
 }
 
 .control-pad .delete:hover {
     background-color: rgb(177, 0, 0);
-    border: 1px solid #b30000;
-    color: white;
+    border: 1px solid rgb(177, 0, 0);
 }
 
 .control-pad .edit:hover {
-    background-color: #3399ff;
-    border: 1px solid #3399ff;
-    color: white;
+    background-color: #0080ff;
+    border: 1px solid #0080ff;
 }
 
 .control-pad form {
