@@ -299,6 +299,7 @@ Estilos para la vista de articulo
     left: auto;
     margin-bottom: 10px;
     cursor: pointer;
+    margin: 20px 0 10px 0;
 }
 
 .author-info > button:hover {

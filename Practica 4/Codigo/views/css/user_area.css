@@ -267,3 +267,59 @@ form > .container label {
     box-sizing: border-box;
     font-size: 15px;
 }
+
+/* Estilos especificos para el area de administracion de permisos */
+.user-permission-box {
+    border: 1px solid #f2f2f2;
+    border-radius: 20px;
+    box-shadow: 0px 15px 20px #e6e6e6;
+    margin: 10px;
+    margin-bottom: 20px;
+    height: 122px;
+}
+
+.user-permission-box h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+.user-permission-box .img-container {
+    float: left;
+}
+
+.user-permission-box img {
+    height: 120px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.user-permission-box .info-container {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.user-permission-box .form-container {
+    position: relative;
+    float: right;
+    top: 70%;
+    right: 3%;
+}
+
+.user-permission-box form {
+    margin-bottom: 0;
+}
+
+.user-permission-box button {
+    border: 1px solid lightgrey;
+    color: grey;
+    background-color: white;
+    border-radius: 5px;
+    padding-left: 2em;
+    padding-right: 2em;
+    cursor: pointer;
+}
+
+.user-permission-box button:hover {
+    background-color: lightgrey;
+    color: white;
+}

@@ -24,5 +24,11 @@ if(($item == 'login') || ($item == 'registration') || ($item == 'registeruser'))
         if ($item == 'modifydata')
             echo ("active");
         ?>">MODIFICA TUS DATOS</a></li>
+    <?php if(isset($_SESSION['user_type']) && ($_SESSION['user_type'] == 'superusuario')) { ?>
+    <li><a href="?option=login&item=modifytypes" class="<?php
+        if ($item == 'modifytypes')
+            echo ("active");
+        ?>"><i style="margin-right: 5px;" class="fas fa-unlock-alt"></i> ADMIN. DE USUARIOS</a></li>
+    <?php } ?>
     <li><a href="?option=login&item=login&action=close">CERRAR SESIÓN</a></li>
 <?php } ?>

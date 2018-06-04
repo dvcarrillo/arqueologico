@@ -90,7 +90,6 @@
             <div class="author-info" id="author-box">
                 <img id="author-info-avatar" src="views/img/avatar/david.jpg" alt="avatar del autor">
                 <h3 id="author-info-name">David Vargas</h3>
-                <p id="author-info-subtitle">Usuario registrado</p>
                 <button id="author-info-close" class="close" onclick="showInfoBox();">Cerrar</button>
             </div>
             <div id="comment-list">
