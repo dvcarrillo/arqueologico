@@ -1,0 +1,325 @@
+/*
+David Vargas Carrillo
+Arturo Cortés Sánchez
+Sistemas de Información Basados en Web
+Curso 2017 - 2018
+
+Práctica 4
+Estilos para la vista de la area de usuario
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    font-family: 'Lora', serif;
+    font-weight: normal;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+}
+
+/* Cuerpo central */
+.big-picture {
+    margin: 0;
+}
+
+.alert-box {
+    width: 90%;
+}
+
+.form-title-box {
+    margin-left: 10px;
+    width: 90%;
+}
+
+.form-title-box h1 {
+
+}
+
+.form-title-box p {
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+}
+
+/* Formulario de login */
+.login-box {
+    margin-left: 10px;
+    margin-top: 40px;
+    padding: 20px;
+    width: 60%;
+    border: 2px solid lightgrey;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    min-height: 250px;
+}
+
+.login-box > form > .img-container {
+    width: 30%;
+}
+
+.login-box > form > .img-container img {
+    height: 120px;
+    position: absolute;
+    left: 30px;
+    top: 50px;
+}
+
+.login-box > form > .container {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    padding: 20px 30px 20px 10px;
+}
+
+form > .container label {
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+}
+
+.login-box > form > .container input[type=email], input[type=password] {
+    width: 100%;
+    display: block;
+    padding: 12px 20px;
+    margin: 5px 0 15px 0;
+    border: 1px solid lightgrey;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.container button {
+    background-color: grey;
+    color: white;
+    border: 1px solid grey;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 5px;
+    padding: 8px;
+    margin-right: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 30%;
+    height: 37px;
+}
+
+.container button:hover {
+    background-color: rgb(100, 100, 100);
+    color:white;
+}
+
+/* Estilos especificos para el formulario de registro */
+.reg-box {
+    margin-left: 10px;
+    margin-top: 40px;
+    padding: 20px;
+    width: 60%;
+    border: 2px solid lightgrey;
+    border-radius: 20px;
+    max-height: 695px;
+}
+
+.reg-box > form > .img-container, .modify-form > form > .img-container {
+}
+
+.reg-box > form > .img-container img, .modify-form > form > .img-container img {
+    display: block;
+    height: 120px;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 70px;
+}
+
+.reg-box > form > .container, .modify-form > form > .container {
+    height: 100%;
+    width: 100%;
+    padding: 20px 30px 20px 10px;
+}
+
+.reg-box > form > .container input[type=email], input[type=password], input[type=text], .modify-form > form > .container input[type=email], input[type=password], input[type=text] {
+    width: 100%;
+    display: block;
+    padding: 12px 20px;
+    margin: 5px 10px 15px 0;
+    border: 1px solid lightgrey;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.reg-box > form > .container button, .modify-form > form > .container button {
+    margin-top: 10px;
+    height: 37px;
+}
+
+/* Estilos especificos para el area de usuario */
+
+.user-box {
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 20px;
+    width: 70%;
+    border: 2px solid lightgrey;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    min-height: 370px;
+}
+
+.user-box {
+
+}
+
+.user-box > .img-container {
+    width: 30%;
+}
+
+.user-box > .img-container img {
+    height: 120px;
+    position: absolute;
+    left: 35px;
+    top: 35px;
+    border-radius: 70px;
+}
+
+.user-box > .data-container {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    padding: 25px 30px 20px 10px;
+}
+
+.user-box > .data-container strong {
+    font-family: 'Roboto', sans-serif;
+    color: #4f4f4f;
+}
+
+.user-box > .data-container p {
+    padding: 10px;
+    padding-left: 15px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.user-box > .data-container > .locked:hover {
+    cursor: not-allowed;
+}
+
+.data-container > .buttons {
+    margin-top: 26px;
+    height: 37px;
+}
+
+.a-button {
+    background-color: grey;
+    color: white;
+    border: 1px solid grey;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+    padding: 8px 15px 8px 15px;
+    margin-right: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 30%;
+}
+
+.a-button:hover {
+    background-color: rgb(100, 100, 100);
+    color:white;
+}
+
+/* Estilos especificos para el area de modificacion de datos */
+
+.modify-form {
+    margin-left: 10px;
+    margin-top: 30px;
+    padding: 20px;
+    width: 70%;
+    border: 2px solid lightgrey;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    height: 770px;
+}
+
+.modify-form > form > .img-container img {
+    display: block;
+    height: 120px;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.modify-form > form > .container input[type=file] {
+    width: 100%;
+    display: block;
+    padding: 12px 20px 0 0;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+/* Estilos especificos para el area de administracion de permisos */
+.user-permission-box {
+    border: 1px solid #f2f2f2;
+    border-radius: 20px;
+    box-shadow: 0px 15px 20px #e6e6e6;
+    margin: 10px;
+    margin-bottom: 20px;
+    height: 122px;
+}
+
+.user-permission-box h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+.user-permission-box .img-container {
+    float: left;
+}
+
+.user-permission-box img {
+    height: 120px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.user-permission-box .info-container {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.user-permission-box .form-container {
+    position: relative;
+    float: right;
+    top: 70%;
+    right: 3%;
+}
+
+.user-permission-box form {
+    margin-bottom: 0;
+}
+
+.user-permission-box button {
+    border: 1px solid lightgrey;
+    color: grey;
+    background-color: white;
+    border-radius: 5px;
+    padding-left: 2em;
+    padding-right: 2em;
+    cursor: pointer;
+}
+
+.user-permission-box button:hover {
+    background-color: lightgrey;
+    color: white;
+}
