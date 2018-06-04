@@ -27,7 +27,7 @@
                 <input type="text" placeholder="Localizada en views/img" name="main-image" value="<?php echo $article->imagen_principal ?>" required>
                 <label for="footer-image">Pie de la imagen principal</label>
                 <input type="text" placeholder="Pie de imagen" name="footer-image" value="<?php echo $article->pie_imagen ?>" required>
-                <label for="article-images">Imégenes adicionales del artículo</label>
+                <label for="article-images">Imágenes adicionales del artículo</label>
                 <input type="text" placeholder="Localizadas en views/img/galleries" name="article-images" value="<?php
                 for($i = 0; $i < count($article->imagenes); $i++) {
                     echo ($article->imagenes[$i] . " ");

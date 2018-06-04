@@ -27,7 +27,7 @@
                 <input type="text" placeholder="Localizada en views/img" name="main-image" required>
                 <label for="footer-image">Pie de la imagen principal</label>
                 <input type="text" placeholder="Pie de imagen" name="footer-image" required>
-                <label for="article-images">Imégenes adicionales del artículo</label>
+                <label for="article-images">Imágenes adicionales del artículo</label>
                 <input type="text" placeholder="Localizadas en views/img/galleries" name="article-images" required>
 
                 <button class="new" id="loading-button" onclick="swapByLoadingIcon()" type="submit">Publicar</button>
