@@ -14,6 +14,7 @@ class UserAreaController
 
     public function __construct() {
         require_once('models/user.php');
+        require_once('models/user_type.php');
         $this->user = "";
     }
 
@@ -67,6 +68,17 @@ class UserAreaController
                     require_once('views/user_area/modifyDataForm.php');
                 else
                     require_once('views/pages/error.php');
+                break;
+            case 'modifytypes':
+                if(isset($_SESSION['user_type']) && ($_SESSION['user_type'] == 'superusuario')) {
+                    $user_types = UserType::all();
+                    $users = User::all();
+
+                    require_once('views/user_area/userAdministration.php');
+                }
+                else {
+                    require_once('views/pages/error.php');
+                }
                 break;
             default:
                 require_once('views/pages/error.php');
@@ -155,6 +167,9 @@ class UserAreaController
                     $this->modifyUser();
                     $this->setUser();
                     break;
+                case 'modify-permissions':
+                    $this->modifyUserPermissions();
+                    break;
             }
         }
     }
@@ -207,6 +222,23 @@ class UserAreaController
         $this->alertMsg = "Sus datos se han modificado correctamente";
 
         return true;
+    }
+
+    private function modifyUserPermissions() {
+        if(!isset($_SESSION['user_type']) || ($_SESSION['user_type'] != 'superusuario')) {
+            $this->alertMsg = "Acceso no autorizado";
+            return false;
+        }
+
+        $user_id = $_GET['user'];
+        $new_permission = $_POST['new-permission'];
+
+        $success = User::modifyPermissions($user_id, $new_permission);
+
+        if ($success)
+            $this->alertMsg = "El nuevo permiso para el usuario " . $user_id . " es " . $new_permission;
+        else
+            $this->alertMsg = "Error al ajustar los permisos de usuario para el usuario " . $user_id;
     }
 
     private function uploadAvatar() {

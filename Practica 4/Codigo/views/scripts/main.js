@@ -112,10 +112,6 @@ function showInfoBox(commentNumber, authorName, imageName) {
         document.getElementById("author-info-name").innerHTML = authorName;
         let imagePath = "views/img/avatar/" + imageName;
         document.getElementById("author-info-avatar").src = imagePath;
-        if (imageName == "avatar.png")
-            document.getElementById("author-info-subtitle").innerHTML = "Usuario invitado";
-        else
-            document.getElementById("author-info-subtitle").innerHTML = "Usuario registrado";
         element.style.top = (153 * (commentNumber - 1)) + "px";
         element.style.display = "inline-block";
     }

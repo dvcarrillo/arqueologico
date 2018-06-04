@@ -123,4 +123,17 @@ class User
 
         return $success;
     }
+
+    public function modifyPermissions($user_id, $type) {
+        $db = ConexionDB::getInstance();
+
+        $stmt = $db->prepare("UPDATE usuarios SET tipo=:type WHERE usuarios.id = :id");
+
+        $stmt->bindParam(':type',$type);
+        $stmt->bindParam(':id',$user_id);
+
+        $success = $stmt->execute();
+
+        return $success;
+    }
 }
