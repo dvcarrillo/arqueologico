@@ -29,19 +29,6 @@ p {
 
 .alert-box {
     width: 90%;
-    background-color: #66ccff;
-    border: 1px solid #66ccff;
-    border-radius: 10px;
-    padding: 0 0 0 15px;
-    margin: 20px 0 10px 10px;
-}
-
-.alert-box p {
-    color: white;
-}
-
-.alert-box i {
-    margin-right: 5px;
 }
 
 .form-title-box {

@@ -205,3 +205,20 @@ function displayEditCommentForm(id_comment) {
     else
         element.style.display = "block";
 }
+
+/** Muestra el formulario de adicion/edicion de articulo
+ */
+function displayNewArticleForm() {
+    var element = document.getElementById("new-article");
+    if (element.style.display === "block")
+        element.style.display = "none";
+    else
+        element.style.display = "block";
+}
+function displayEditArticleForm() {
+    var element = document.getElementById("edit-article");
+    if (element.style.display === "block")
+        element.style.display = "none";
+    else
+        element.style.display = "block";
+}

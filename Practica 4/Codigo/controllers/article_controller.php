@@ -8,6 +8,8 @@
 
 class ArticleController
 {
+    public $alertMsg = "";
+
     public function __construct() {
         require_once('models/article.php');
         require_once('models/comment.php');
@@ -70,27 +72,41 @@ class ArticleController
             case 'new-article':
                 $success = $this->publishNewArticle();
                 if(!$success)
-                    echo("Error al publicar el artículo");
+                    $this->alertMsg = "Error al publicar el artículo";
+                break;
+            case 'edit-article':
+                $success = $this->editArticle();
+                if(!$success)
+                    $this->alertMsg = "Error al editar el artículo";
+                break;
+            case 'delete-article':
+                $success = $this->deleteArticle();
+                if(!$success)
+                    $this->alertMsg = "Error al eliminar el artículo";
                 break;
             case 'new-comment':
                 $success = $this->publishNewComment();
                 if(!$success)
-                    echo("Error al publicar el comentario");
+                    $this->alertMsg = "Error al publicar el comentario";
                 break;
             case 'edit':
                 $success = $this->modifyComment();
                 if(!$success)
-                    echo("Error al modificar el comentario");
+                    $this->alertMsg = "Error al editar el comentario";
                 break;
             case 'delete':
                 $success = $this->deleteComment();
                 if(!$success)
-                    echo("Error al eliminar el comentario");
+                    $this->alertMsg = "Error al eliminar el comentario";
                 break;
         }
     }
 
     private function publishNewArticle() {
+        if (!isset($_SESSION['user_type']) || ($_SESSION['user_type'] == 'registrado') || ($_SESSION['user_type'] == 'moderador')) {
+            return false;
+        }
+
         date_default_timezone_set('Europe/Madrid');
         $today = getdate();
         $day = $today['mday'];
@@ -107,6 +123,40 @@ class ArticleController
 
         $success = Article::addNew($titulo, $subtitulo, $fecha, $contenido, $imagen_principal, $imagenes, $pie_imagen);
 
+        $this->alertMsg = "Nuevo artículo publicado correctamente";
+        return $success;
+    }
+
+    private function editArticle() {
+        if (!isset($_SESSION['user_type']) || ($_SESSION['user_type'] == 'registrado') || ($_SESSION['user_type'] == 'moderador')) {
+            return false;
+        }
+
+        $target = $_GET['item'];
+
+        $titulo = $_POST['title'];
+        $subtitulo = $_POST['subtitle'];
+        $contenido = $_POST['content'];
+        $imagen_principal = $_POST['main-image'];
+        $imagenes = $_POST['article-images'];
+        $pie_imagen = $_POST['footer-image'];
+
+        $success = Article::modifyById($target, $titulo, $subtitulo, $contenido, $imagen_principal, $imagenes, $pie_imagen);
+
+        $this->alertMsg = "Artículo editado correctamente";
+        return $success;
+    }
+
+    private function deleteArticle() {
+        if (!isset($_SESSION['user_type']) || ($_SESSION['user_type'] == 'registrado') || ($_SESSION['user_type'] == 'moderador')) {
+            return false;
+        }
+
+        $target = $_GET['id'];
+
+        $success = Article::deleteById($target);
+
+        $this->alertMsg = "Artículo eliminado correctamente";
         return $success;
     }
 
@@ -129,31 +179,36 @@ class ArticleController
 
         $success = Comment::addNew($nombre, $fecha, $hora, $contenido, $email, $imagen, $id_articulo);
 
+        $this->alertMsg = "Tu comentario se ha publicado";
         return $success;
     }
 
     private function deleteComment() {
-        $comment_id = $_GET['comment_id'];
-
         if (!isset($_SESSION['user_type']) || ($_SESSION['user_type'] == 'registrado')) {
             return false;
         }
 
+        $comment_id = $_GET['comment_id'];
+
         $success = Comment::deleteById($comment_id);
+
+        $this->alertMsg = "Comentario eliminado correctamente";
         return $success;
     }
 
     private function modifyComment() {
+        if (!isset($_SESSION['user_type']) || ($_SESSION['user_type'] == 'registrado')) {
+            return false;
+        }
+
         $comment_id = $_GET['comment_id'];
         $content = $_POST['comment'];
 
         $content .= '<br><br><span style="color:grey; font-style: italic">Comentario editado por moderador</span>';
 
-        if (!isset($_SESSION['user_type']) || ($_SESSION['user_type'] == 'registrado')) {
-            return false;
-        }
-
         $success = Comment::modifyById($comment_id, $content);
+
+        $this->alertMsg = "Comentario modificado correctamente";
         return $success;
     }
 }
