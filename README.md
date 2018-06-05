@@ -12,5 +12,5 @@ two, that don't have PHP code, are currently live.
 - [**Practice 2 (live version):**](https://dvcarrillo.github.io/ugr-web-development/Practica%202/Codigo/index.html) Javascript. Addition of comments to article view.
 - **Practice 3:** Adaptation of the page to PHP and creation of MySQL databases. Addition of photo galleries and more articles.
 - **Practice 4:** Implementation of users and permissions. Articles, comments and user permissions are modifiable depending on what type of user is logged in. Implementation of all the required pages and forms to make it possible.
-- **Practice 5:** *Under development...*
+- **Practice 5:** Addition of a search bar on the front page that implements AJAX.
 
