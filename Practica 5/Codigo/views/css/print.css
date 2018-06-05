@@ -1,0 +1,292 @@
+/* 
+David Vargas Carrillo
+Arturo Cortés Sánchez
+Sistemas de Información Basados en Web
+Curso 2017 - 2018
+
+Práctica 2
+Estilos para la vista de articulo
+*/
+
+/* Article view */
+.article {
+    padding: 10px;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.sidebar {
+    float: left;
+    margin-right: 50px;
+    width: 20%;
+    height: 100%;
+    display: none;
+}
+footer {
+	margin: 80px -10px -20px -10px; 
+	background-color: #4f4c4d;
+	width: calc(100% + 18px);
+    display: inline-block;
+    padding-bottom: 20px;
+    display: none;
+}
+
+.navbar ul {
+    margin-top: 10px;
+    padding: 0;
+    width: auto;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+}
+
+#nav-strip {
+    height: 0px;
+    padding-bottom: 20px;
+    border-top: solid 1px lightgray;
+}
+
+/* Article view */
+.article > .img-container {
+    float: right;
+    width: 38%;
+    margin: 40px;
+    margin-right: 0;
+    margin-top: 0;
+    border: 1px solid gray;
+}
+
+.article > .img-container img {
+    border-bottom: 1px solid gray;
+    width: 100%;
+}
+
+.article > .img-container p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color:black;
+}
+
+.article h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 40px;
+}
+
+.article > .date {
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+    margin-top: -15px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.article > .description {
+    font-family: 'Playfair Display', serif;
+    color:black;
+    text-align: justify;
+}
+
+
+.article-button {
+    background-color: white;
+    color: rgb(177, 0, 0);
+    border: 1px solid rgb(177, 0, 0);
+    font-family: 'Roboto', sans-serif;
+    padding: 15px;
+    margin-top: 30px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: none;
+}
+
+.article-button:hover {
+    background-color: rgb(177, 0, 0);
+    color: white;
+    display: none;
+}
+
+/* Photo gallery */
+.photo-gallery {
+    display: none;
+}
+
+/* Comments view */
+.comments-block {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 40px;
+    display: none;
+}
+
+.comment {
+    border-bottom: 1px solid lightgray;
+    padding-top: 10px;
+    display: none;
+}
+
+.profile-img {
+    float:left;
+    margin: 20px;
+    margin-right: 30px;
+    display: none;
+}
+
+.profile-img img {
+    float: left;
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    display: none;
+}
+
+.comment-text {
+    padding: 20px;
+    padding-left: 120px;
+    display: none;
+}
+
+.comment-text p {
+    margin-top: 0px;
+    display: none;
+}
+
+.comment-author > #author-name {
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+}
+
+.comment-date {
+    color: grey;
+    font-size: 14px;
+    display: none;
+}
+
+.comments-block form {
+    float:right;
+    width: 85%;
+    margin: 5px;
+    margin-top: 0px;
+    display: none;
+}
+
+.author-info {
+    position: absolute;
+    display: none;
+    background-color: white;
+    box-shadow: 0px 15px 20px #e6e6e6;
+    border-radius: 10px;
+    top: 0%;
+    left: -30%;
+    font-style: 'Roboto', sans-serif;
+    text-align: center;
+    display: none;
+}
+
+.author-info > h3 {
+    font-weight: lighter;
+    color: rgb(59, 59, 59);
+    margin-bottom: 0;
+    display: none;
+}
+
+.author-info > p {
+    color: grey;
+    font-size: 12px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.author-info > img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 250px;
+    width: 250px;
+    display: none;
+}
+
+.author-info > button {
+    border: 1px solid rgb(177, 0, 0);
+    border-radius: 5px;
+    padding: 8px;
+    background-color: white;
+    color: rgb(177, 0, 0);
+    font-size: 12px;
+    left: auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+.author-info > button:hover {
+    background-color: rgb(177, 0, 0);
+    color: white;
+    display: none;
+}
+
+.new-comment-title {
+    font-weight: bold;
+    display: none;
+}
+
+.new-comment-text {
+    border: 1px solid rgb(161, 161, 161);
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 20px;
+    vertical-align: text-top;
+    width: 90%;
+    height: 100px;
+    font-size: 16px;
+    resize: none;
+    display: none;
+}
+
+.new-comment-name {
+    border: 1px solid rgb(161, 161, 161);
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 16px;
+    width: 30%;
+    display: none;
+}
+
+.new-comment-email {
+    border: 1px solid rgb(161, 161, 161);
+    margin-top: 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 16px;
+    width: 56%;
+    display: none;
+}
+
+.new-comment-button {
+    background-color: grey;
+    color: white;
+    border: 1px solid grey;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 10px;
+    padding: 14px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 20%;
+    display: none;
+}
+
+.new-comment-button:hover {
+    background-color: rgb(100, 100, 100);
+    color:white;
+    display: none;
+}
