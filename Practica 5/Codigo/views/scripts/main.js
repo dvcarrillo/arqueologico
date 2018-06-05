@@ -218,13 +218,14 @@ function displayEditArticleForm() {
     else
         element.style.display = "block";
 }
+
 /** Muestra la barra de búsqueda
  */
 function displaySearchBar() {
+    var searchbar = document.getElementById('searchbar');
 
-    var searchbar = document.getElementById('searchbar')
     if (searchbar.style.display === "none"){
-        searchbar.style.display = "block"
+        searchbar.style.display = "block";
         document.getElementById("centralbox").style.display = "none";
         var elements = document.getElementsByClassName("box secondary");
         for (var i = 0; i < elements.length; i++) {
@@ -232,7 +233,7 @@ function displaySearchBar() {
         }
     }
     else{
-        searchbar.style.display = "none"
+        searchbar.style.display = "none";
         document.getElementById("centralbox").style.display = "block";
         var elements = document.getElementsByClassName("box secondary");
         for (var i = 0; i < elements.length; i++) {

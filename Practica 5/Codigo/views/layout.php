@@ -63,7 +63,9 @@
                         else
                             echo("ENTRAR");
                     ?></a></li>
-                    <li><a onclick="displaySearchBar();"><i class="fas fa-search"></i></a></li>
+                    <?php if ($option == "index") { ?>
+                        <li><a onclick="displaySearchBar();" style="cursor: pointer;"><i class="fas fa-search"></i></a></li>
+                    <?php } ?>
                 </ul>
             </nav>
             <div id="nav-strip"/>
