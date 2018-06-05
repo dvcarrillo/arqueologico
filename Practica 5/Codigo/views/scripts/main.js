@@ -31,7 +31,7 @@ function updateNumComments() {
 /** Muestra u oculta la seccion de comentarios
 */
 function showComments() {
-    var element = document.getElementById("comments-block");
+    let element = document.getElementById("comments-block");
 
     if (element.style.display == "block")
         element.style.display = "none";
@@ -42,7 +42,7 @@ function showComments() {
 /** Muestra u oculta la seccion de comparticion
 */
 function showShare() {
-    var element = document.getElementById("share-block");
+    let element = document.getElementById("share-block");
     if (element.style.display == "block")
         element.style.display = "none";
     else
@@ -73,14 +73,14 @@ function facebookShare() {
 /** Comprueba que el email es correcto
  */
 function validateEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
 
 /** Comprueba que el comentario está correcto
  */
 function isCommentOk(name, email, comment) {
-    var error = "";
+    let error = "";
 
     if (name == "") {
         error += "El nombre está vacío\n";
@@ -104,7 +104,7 @@ function isCommentOk(name, email, comment) {
 /** Muestra u oculta la informacion del autor
 */
 function showInfoBox(commentNumber, authorName, imageName) {
-    var element = document.getElementById("author-box");
+    let element = document.getElementById("author-box");
 
     if (element.style.display == "inline-block")
         element.style.display = "none";
@@ -120,9 +120,9 @@ function showInfoBox(commentNumber, authorName, imageName) {
 /** Inserta un nuevo comentario
 */
 function addComment() {
-    var name = document.getElementById("name-field").value;
-    var email = document.getElementById("email-field").value;
-    var comment = document.getElementById("comment-field").value;
+    let name = document.getElementById("name-field").value;
+    let email = document.getElementById("email-field").value;
+    let comment = document.getElementById("comment-field").value;
 
     if (isCommentOk(name, email, comment)) {
 
@@ -131,22 +131,22 @@ function addComment() {
         // Guarda la fecha actual
         const MONTH_NAMES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre",
             "octubre", "noviembre", "diciembre"];
-        var date = new Date();
+        let date = new Date();
 
-        var day = date.getDate();
-        var month = MONTH_NAMES[date.getMonth()];
-        var year = date.getFullYear();
-        var time = date.toTimeString().split(' ')[0];
-        var time_formatted;
+        let day = date.getDate();
+        let month = MONTH_NAMES[date.getMonth()];
+        let year = date.getFullYear();
+        let time = date.toTimeString().split(' ')[0];
+        let time_formatted;
 
         for (let i = 0; i < time.length - 2; i++) {
             time_formatted += time[i];
         }
 
-        var date_string = " A las " + time_formatted + " el " + day + " de " + month + " de " + year;
+        let date_string = " A las " + time_formatted + " el " + day + " de " + month + " de " + year;
 
         // Actualiza la vista con un nuevo bloque de comentario
-        var new_comment =
+        let new_comment =
             '<div class="comment" id="comment-' + num_comments + '">\n' +
             '<div class="profile-img">\n' +
             '<img id="comment-avatar" src="views/img/avatar/avatar.png" alt="avatar" onclick="showInfoBox(' + num_comments + ', \'' + name + '\', \'avatar.png\');">\n' +
@@ -172,9 +172,9 @@ function addComment() {
 /** Censura las palabras prohibidas
  */
 function censorBeep() {
-    var comment = document.getElementById("comment-field").value;
-    var regxp = /tont.|idiota|mierda|estupid.|imbecil|caca/i;
-    var ban = regxp.exec(comment);
+    let comment = document.getElementById("comment-field").value;
+    let regxp = /tont.|idiota|mierda|estupid.|imbecil|caca/i;
+    let ban = regxp.exec(comment);
 
     if (ban != null) {
         if (ban[0] != "") {
@@ -186,7 +186,7 @@ function censorBeep() {
 }
 
 function banWords(event) {
-    var char = event.which || event.keyCode;
+    let char = event.which || event.keyCode;
     if (char == 32)
         censorBeep();
 }
@@ -194,8 +194,8 @@ function banWords(event) {
 /** Muestra el formulario de edicion de comentario
  */
 function displayEditCommentForm(id_comment) {
-    var lookfor = "edit-comment-form-" + id_comment;
-    var element = document.getElementById(lookfor);
+    let lookfor = "edit-comment-form-" + id_comment;
+    let element = document.getElementById(lookfor);
     if (element.style.display == "block")
         element.style.display = "none";
     else
@@ -205,57 +205,74 @@ function displayEditCommentForm(id_comment) {
 /** Muestra el formulario de adicion/edicion de articulo
  */
 function displayNewArticleForm() {
-    var element = document.getElementById("new-article");
+    let element = document.getElementById("new-article");
     if (element.style.display === "block")
         element.style.display = "none";
     else
         element.style.display = "block";
 }
 function displayEditArticleForm() {
-    var element = document.getElementById("edit-article");
+    let element = document.getElementById("edit-article");
     if (element.style.display === "block")
         element.style.display = "none";
     else
         element.style.display = "block";
 }
 
-/** Muestra la barra de búsqueda
+/** Muestra/oculta la barra de búsqueda
  */
 function displaySearchBar() {
-    var searchbar = document.getElementById('searchbar');
+    let search = document.getElementById('search-bar');
+    let searchField = document.getElementById('search-field');
+    let searchIcon = document.getElementById('search-icon');
+    let results = document.getElementById('results');
 
-    if (searchbar.style.display === "none"){
-        searchbar.style.display = "block";
-        document.getElementById("centralbox").style.display = "none";
-        var elements = document.getElementsByClassName("box secondary");
-        for (var i = 0; i < elements.length; i++) {
-            elements[i].style.display = "none";
+    if (search.style.display === "none") {
+        if(searchField.value != "") {
+            hideArticles();
+        } else if (results.innerHTML != "") {
+            hideArticles();
         }
+        search.style.display = "block";
+        searchIcon.style.color = 'black';
     }
-    else{
-        searchbar.style.display = "none";
-        document.getElementById("centralbox").style.display = "block";
-        var elements = document.getElementsByClassName("box secondary");
-        for (var i = 0; i < elements.length; i++) {
-            elements[i].style.display = "inline-block";
-        }
+    else {
+        showArticles();
+        search.style.display = "none";
+        searchIcon.style.color = 'grey';
+    }
+}
 
-    }   
+/** Muestra/oculta todos los articulos de la pagina principal
+ */
+function hideArticles() {
+    document.getElementById("centralbox").style.display = "none";
+    let elements = document.getElementsByClassName("box secondary");
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].style.display = "none";
+    }
+}
+function showArticles() {
+    document.getElementById("centralbox").style.display = "block";
+    let elements = document.getElementsByClassName("box secondary");
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].style.display = "inline-block";
+    }
 }
 
 /** Funciones dedicadas a la busqueda
  */
 
 function cleanList() {
-    var listElement = document.getElementById('results');
+    let listElement = document.getElementById('results');
     while (listElement.firstChild) {
         listElement.removeChild(listElement.firstChild);
     }
 }
 
 function actualizarLista(data, id) {
-    var results = document.getElementById('results');
-    var result = document.createElement("div");
+    let results = document.getElementById('results');
+    let result = document.createElement("div");
     result.setAttribute("class", "box secondary");
     result.setAttribute("id", "secondarybox");
     result.innerHTML = "<a href=\"?option=show&item=" +id+ "\" >" + "\n" + "<img src=\"views/img/" + data.imagen_principal + "\""+ " style=\"margin-left: auto; margin-right:auto;\">" + "\n" + "</a>" + "\n" + "<div id=\"img-strip\">" + "\n" + "<h2><a href='?option=show&item=" + id + "'>" + data.titulo + "</a></h2>" + "\n" + "<p>" + data.subtitulo + "</p>" + "\n" + "</div> ";

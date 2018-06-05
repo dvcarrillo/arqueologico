@@ -34,13 +34,15 @@
         </div>
     <?php } ?>
 
-    <div id="searchbar" style="display : none">
-        <p><strong>Buscar artículos</strong></p>
-        <input type="text" id="campoTexto" >
-        <div id="results"></div>
-    </div>
-
     <div class="articles-display">
+        <div class="search-container" id="search-bar" style="display: none;">
+            <div class="bar-container">
+                <input type="text" id="search-field" placeholder="Búsqueda de artículos..." name="search-in" onfocusin="hideArticles();">
+            </div>
+
+            <div id="results"></div>
+        </div>
+
         <?php foreach ($articles as $article) { ?>
             <div class="<?php
                 if ($article->id < 1)
@@ -73,18 +75,18 @@
 
 <script>
     $(document).ready(function () {
-        $("#campoTexto").keyup(function () {
-            var txt = $("#campoTexto").val();
-            txt = { "content": txt }
+        $("#search-field").keyup(function () {
+            let txt = $("#search-field").val();
+            txt = { "content": txt };
             $.ajax({
                 data: txt,
                 url: 'search.php',
                 type: 'post',
                 success: function (data, status) {   
                     resultsList = JSON.parse(data);
-                    cleanList()
+                    cleanList();
                     for (i = 0; i < resultsList.length; i++) {
-                        actualizarLista(resultsList[i], i)
+                        actualizarLista(resultsList[i], i);
                     }
                 }
             });
