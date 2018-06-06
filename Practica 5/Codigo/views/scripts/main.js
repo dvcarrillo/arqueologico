@@ -270,12 +270,12 @@ function cleanList() {
     }
 }
 
-function actualizarLista(data, id) {
+function actualizarLista(data) {
     let results = document.getElementById('results');
     let result = document.createElement("div");
     result.setAttribute("class", "box secondary");
     result.setAttribute("id", "secondarybox");
-    result.innerHTML = "<a href=\"?option=show&item=" +id+ "\" >" + "\n" + "<img src=\"views/img/" + data.imagen_principal + "\""+ " style=\"margin-left: auto; margin-right:auto;\">" + "\n" + "</a>" + "\n" + "<div id=\"img-strip\">" + "\n" + "<h2><a href='?option=show&item=" + id + "'>" + data.titulo + "</a></h2>" + "\n" + "<p>" + data.subtitulo + "</p>" + "\n" + "</div> ";
+    result.innerHTML = "<a href=\"?option=show&item=" +data.id_art+ "\" >" + "\n" + "<img src=\"views/img/" + data.imagen_principal + "\""+ " style=\"margin-left: auto; margin-right:auto;\">" + "\n" + "</a>" + "\n" + "<div id=\"img-strip\">" + "\n" + "<h2><a href='?option=show&item=" + data.id_art + "'>" + data.titulo + "</a></h2>" + "\n" + "<p>" + data.subtitulo + "</p>" + "\n" + "</div> ";
     results.appendChild(result);
 }
 

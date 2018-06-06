@@ -82,11 +82,11 @@
                 data: txt,
                 url: 'search.php',
                 type: 'post',
-                success: function (data, status) {   
+                success: function (data) {   
                     resultsList = JSON.parse(data);
                     cleanList();
                     for (i = 0; i < resultsList.length; i++) {
-                        actualizarLista(resultsList[i], i);
+                        actualizarLista(resultsList[i]);
                     }
                 }
             });
