@@ -18,5 +18,5 @@ The first two iterations, which are PHP-free, are available live.
 - **Práctica 4:** Implementation of users and permissions. Articles, comments and user permissions are modifiable depending on what type of user is logged in. Implementation of all the required pages and forms to make it possible.
 - **Práctica 5:** Addition of a search bar on the front page that implements AJAX.
 
-:warning: *The usage of Bootstrap or grid layouts was not allowed. Therefore, the webpage is not responsive and may 
-not look good when displayed at low resolution*
+:warning: The usage of Bootstrap or grid layouts was not allowed. Therefore, the webpage is not responsive and may 
+not look good when displayed at low resolution.
