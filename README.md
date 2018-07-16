@@ -17,3 +17,6 @@ The first two iterations, which are PHP-free, are available live.
 - **Práctica 3:** Adaptation of the page to PHP and creation of MySQL databases. Addition of photo galleries and more articles.
 - **Práctica 4:** Implementation of users and permissions. Articles, comments and user permissions are modifiable depending on what type of user is logged in. Implementation of all the required pages and forms to make it possible.
 - **Práctica 5:** Addition of a search bar on the front page that implements AJAX.
+
+*The usage of Bootstrap or grid layouts was not allowed, so the webpage is not responsive and might have problems
+when displayed at low resolutions*
