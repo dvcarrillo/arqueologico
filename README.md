@@ -3,11 +3,11 @@
 Project for the course of Web Information Systems Development at Universidad de Granada, where we had to create a 
 web-based information system for a fictional museum.
 
-The project consists of five iterations (called Prácticas), each one made over the previous one, until the whole 
+The project consists of five iterations (called prácticas here), each one made over the previous one, until the whole 
 web system is created. It has been created by:
 
-- David Vargas Carrillo ([@dvcarrillo](http://github.com/dvcarrillo))
-- Arturo Cortés Sánchez ([@arturocs](http://github.com/arturocs))
+- David Vargas Carrillo ([@dvcarrillo](http://github.com/dvcarrillo)) / Front-end, back-end
+- Arturo Cortés Sánchez ([@arturocs](http://github.com/arturocs)) / Back-end
 
 ## Specifications
 The first two iterations, which are PHP-free, are available live.
