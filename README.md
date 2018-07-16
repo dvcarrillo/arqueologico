@@ -1,7 +1,7 @@
 # Arqueológico - Web Information System
 
-Work for the course of Web Development at the Universidad de Granada, where we had to create a web-based information
-system for a fictional museum.
+Project for the course of Web Information Systems Development at Universidad de Granada, where we had to create a 
+web-based information system for a fictional museum.
 
 The project consists of five iterations (called Prácticas), each one made over the previous one, until the whole 
 web system is created. It has been created by:
